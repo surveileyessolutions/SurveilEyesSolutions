@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>SurveilEyesSolutions</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        
+        <!-- Fonts -->
+        <!-- Source Sans Pro -->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400i|Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+        
+        <!-- CSS -->
+
+        <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+        <!-- Bootstrap CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+        
+
+        <link rel="stylesheet" href="css/themefisher-fonts.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Responsive Stylesheet -->
+        <link rel="stylesheet" href="css/responsive.css">
+    </head>
+
+    <body id="body">
+
+        <div id="preloader">
+            <div class="camera">
+                <div class="outer-ring"></div>
+                <div class="arc arc1"></div>
+                <div class="arc arc2"></div>
+                <div class="lens">
+                    <div class="lens-core"></div>
+                    <div class="lens-dot"></div>
+                </div>
+            </div>
+            <p id="loading-text" class="loading-text"></p>
+        </div>
+
+        
+                <a href="mailto:SurveilEyesSolutions@gmail.com" class="chat-bubble" style="bottom: 170px;">
+            <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <a href="https://wa.me/12817367985" target="_blank" class="chat-bubble" style="bottom: 100px;">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+            <div class="chat-bubble" onclick="toggleChat()" style="bottom: 30px;">
+                <i class="fa-solid fa-comments"></i>
+            </div>
+
+            <div class="chat-window" id="chatWindow">
+                <div class="chat-header">
+                    <span>SurveilEyes Support</span>
+                    <span style="cursor:pointer;" onclick="toggleChat()">&#10005;</span>
+                </div>
+                <div class="chat-body" id="chatBody">
+                    <div class="bot-msg">Hi! I am the SurveilEyes assistant. Ask me about Plans, Installation, or type "Help".</div>
+                </div>
+                <div class="chat-footer">
+                    <input type="text" id="userInput" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+
+
+	    <!-- 
+	    Header start
+	    ==================== -->
+        <div class="container">
+            <nav class="navbar navbar-fixed-top  navigation " id="top-nav">
+                <a class="navbar-brand" href="index.html">
+                 <span class="brand-text">SurveilEyesSolutions</span>
+                </a>
+
+              <button class="navbar-toggler hidden-lg-up float-lg-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" >
+                  <i class="tf-ion-android-menu"></i>
+              </button>
+              <div class="collapse navbar-toggleable-md" id="navbarResponsive">
+                <ul class="nav navbar-nav menu float-lg-right" id="top-nav">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">HOME</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#about">ABOUT</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#service">SERVICES</a>
+                  </li>
+                  <li class="nav-item">
+                   <a class="nav-link" href="#Payment-Plans">PRICING</a>
+                 </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#Mail-Addition">GET MAIL</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#contact">CONTACT</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+        </div>
+        
+
+	    <section class="hero-area bg-1">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-md-7">
+	                    <div class="block">
+	                        <h1 class="wow fadeInDown" data-wow-delay="0.3s" data-wow-duration=".2s">SurveilEyesSolutions</h1>
+	                        <p class="wow fadeInDown" data-wow-delay="0.5s" data-wow-duration=".5s">Your Security Our mission. Always Watching, Always secure!</p>
+	                        <div class="wow fadeInDown" data-wow-delay="0.7s" data-wow-duration=".7s">
+	                        	<a class="btn btn-home" href="#contact" role="button">Get in touch -></a>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="col-md-5 wow zoomIn">
+	                    <div class="block">
+	                        <div class="counter text-center">
+	                            <ul id="countdown_dashboard">
+	                                <li>
+	                                    <div class="dash days_dash">
+	                                        <div class="digit">3</div>
+	                                        <div class="digit">6</div>
+	                                        <div class="digit">5</div>
+	                                        <span class="dash_title">Days</span>
+	                                    </div>
+	                                </li>
+	                                <li>
+	                                    <div class="dash hours_dash">
+	                                        <div class="digit">2</div>
+	                                        <div class="digit">4</div>
+	                                        <span class="dash_title">Hours</span>
+	                                    </div>
+	                                </li>
+	                                <li>
+	                                    <div class="dash minutes_dash">
+	                                        <div class="digit">1,4</div>
+	                                        <div class="digit">40</div>
+	                                        <span class="dash_title">Minutes</span>
+	                                    </div>
+	                                </li>
+	                                <li>
+	                                    <div class="dash seconds_dash">
+	                                        <div class="digit">86</div>
+	                                        <div class="digit">40</div>
+	                                        <div class="digit">0</div>
+	                                        <span class="dash_title">Seconds</span>
+	                                    </div>
+	                                </li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div><!-- .row close -->
+	        </div><!-- .container close -->
+	    </section><!-- header close -->
+
+
+
+        <!-- 
+        About start
+        ==================== -->
+        <section  class="section about bg-gray" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 col-sm-12 wow fadeInLeft">
+                        <div class="content">
+                        	<div class="sub-heading">
+                        		<h3>We are a professional remote surveillance and monitoring company dedicated to helping
+                                 businesses protect their assets, employees, and customers in real time. </h3>
+                        	</div>
+                           
+                            <p>
+                                With a highly trained
+                                team and advanced monitoring technology, we watch over your security cameras 24/7, 365
+                                days a year to detect theft, suspicious behavior, and any unusual activity before it becomes a
+                                problem. Our mission is to give business owners peace of mind by ensuring that their
+                                investment in security is actively monitored and supported by reliable experts at all times
+                            </p>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-12 wow fadeInLeft" data-wow-delay="0.3s">
+                        <div class="about-slider">
+                            <img src="images/Surveil/about1.jpg" alt="">
+                            <img src="images/Surveil/about2.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- #about close -->
+        <!-- 
+        About start
+        ==================== -->
+
+        <!-- 
+        Service start
+        ==================== -->
+        <section id="service" class="service section">
+            <div class="container">
+                <div class="row">
+                    <div class="heading wow fadeInUp">
+                        <h2>Find the best services to get secured</h2>
+                        <p>We provide comprehensive surveillance solutions tailored to your business needs.</p>
+                    </div>
+                    <div class="col-sm-6 col-md-3 wow fadeInLeft">
+                <div class="block">
+                        <i class="fas fa-eye"></i>  
+                        <h3>24/7 Monitoring</h3>
+                        <p>Our team watches your cameras around the clock, ensuring every alert is noticed immediately.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.3s">
+                    <div class="block">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Threat Detection</h3>
+                        <p>Suspicious behavior like theft or misconduct is identified in real-time, enabling quick response.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.6s">
+                    <div class="block">
+                        <i class="fas fa-bell"></i>       
+                        <h3>Instant Alerts</h3>
+                        <p>Owners or staff are notified instantly about incidents, preventing losses before they happen.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.9s">
+                    <div class="block">
+                        <i class="fas fa-cogs"></i>       
+                        <h3>Expert Installation</h3>
+                        <p>We ensure your cameras are set up correctly for maximum coverage and optimal security.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow fadeInLeft">
+                    <div class="block">         
+                        <i class="fas fa-tools"></i>        
+                        <h3>Regular Maintenance</h3>
+                        <p>Keep your system fully operational with our routine checks and preventive maintenance services.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.3s">
+                    <div class="block">
+                        <i class="fas fa-shield-alt"></i> 
+                        <h3>Trusted Integrity</h3>
+                        <p>Our certified team ensures your data is handled securely and all monitoring is done with integrity.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.6s">
+                    <div class="block">
+                        <i class="fas fa-map"></i>         
+                        <h3>Holistic Coverage</h3>
+                        <p>From entrances to sensitive areas, every angle is actively monitored to prevent blind spots.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.9s">
+                    <div class="block">
+                        <i class="fas fa-file-alt"></i>   
+                        <h3>Actionable Reporting</h3>
+                        <p>Receive clear, concise reports on incidents and alerts to make informed security decisions.</p>
+                    </div>
+                </div>
+
+                </div><hr>
+            </div><!-- .container close -->
+        </section><!-- #service close --> 
+        
+        <!-- Payment Plans Start-->
+         <section class="container" id="Payment-Plans">
+            <div class="heading wow fadeInUp">
+                 <h2>Choose Your Protection Level</h2>
+                <p class="subtitle">Tailored surveillance solutions for total peace of mind and ironclad security.</p>
+             </div>
+                    
+            <div class="pricing-grid">
+                
+                <div class="pricing-card wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="plan-icon">🛡️</div>
+                    <h3 class="plan-name">Basic Secure</h3>
+                    <div class="price">$500 <small>/mo</small></div>
+                    <span class="commitment">1 Month Commitment</span>
+                    <div class="total-payment">Total: $500 Billed Monthly</div>
+                    <ul class="features-list">
+                        <li>Standard HD Monitoring</li>
+                        <li>24/7 Digital Support</li>
+                        <li>Cloud Storage (7 Days)</li>
+                        <li>Instant Mobile Alerts</li>
+                    </ul>
+                    <a href="#" class="btn">Get Started</a>
+                </div>
+
+                <div class="pricing-card featured wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="badge">Best Value</div>
+                    <div class="plan-icon">⚔️</div>
+                    <h3 class="plan-name">Advance Shield</h3>
+                    <div class="price">$450 <small>/mo</small></div>
+                    <span class="commitment">3 Months Commitment</span>
+                    <div class="total-payment">Total: $1,350 (Paid in Advance)</div>
+                    <ul class="features-list">
+                        <li>Everything in Basic</li>
+                        <li>AI Human Detection</li>
+                        <li>Cloud Storage (30 Days)</li>
+                        <li>Priority Support Line</li>
+                    </ul>
+                    <a href="#" class="btn" style="background-color: #00a8b4;">Secure Now</a>
+                </div>
+
+                <div class="pricing-card wow fadeInUp" data-wow-delay="0.9s">
+                    <div class="plan-icon">🦅</div>
+                    <h3 class="plan-name">Elite Guardian</h3>
+                    <div class="price">$400 <small>/mo</small></div>
+                    <span class="commitment">6 Months Commitment</span>
+                    <div class="total-payment">Total: $2,400 (Paid in Advance)</div>
+                    <ul class="features-list">
+                        <li>Everything in Advance</li>
+                        <li>4K Ultra-HD Resolution</li>
+                        <li>Dedicated Account Manager</li>
+                        <li>On-site Quarterly Audits</li>
+                    </ul>
+                    <a href="#" class="btn">Go Elite</a>
+                </div>
+
+            </div>
+        </section><br><br><br>
+        <!-- Payment Plans Close-->
+
+        <!-- #call-to-action Close-->
+        <section class="call-to-action section" id="Mail-Addition">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 wow text-center">
+                        <div class="block">
+                            <h2>Subscribe to our mailing list</h2>
+                            <p>We mail for new updates and other stuff</p>
+                            <div class="col-lg-6 offset-lg-3">
+                                
+                                <form name="submit-to-google-sheet-subscribe">
+                                    
+                                    <input type="hidden" name="action" value="subscribe">
+
+                                    <div class="input-group">
+                                        <input type="email" name="email" class="form-control" placeholder="Your Email Address Here" required>
+                                        
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default btn-subscription" type="submit">Subscribe</button>
+                                        </span>
+                                    </div>
+                                </form>
+                                
+                                <div id="sub-msg" style="margin-top: 15px; font-weight: bold; min-height: 20px;"></div>
+
+                            </div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- #call-to-action close -->
+
+        <!-- 
+        Contact start
+        ==================== -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="block">
+                            <div class="heading wow fadeInUp">
+                                <h2>Get In Touch</h2>
+                                <p>We are Located in Houston, Texas <br> For any Query contact us directly on <b>SurveilEyesSolutions@gmail.com</b><br>To get attached fill the form beneath</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 offset-md-3">
+                    <div class="form-group">
+                        
+                        <form name="submit-to-google-sheet-contact" id="contact-form">
+                            
+                            <input type="hidden" name="action" value="contact">
+
+                            <div class="input-field wow fadeInUp" data-wow-delay="0.3s">
+                                <input type="text" class="form-control" placeholder="Your Name" name="name" required>
+                            </div>
+                            
+                            <div class="input-field wow fadeInUp" data-wow-delay="0.6s">
+                                <input type="email" class="form-control" placeholder="Email Address" name="email" required>
+                            </div>
+                            
+                            <div class="input-field wow fadeInUp" data-wow-delay="0.9s">
+                                <textarea class="form-control" placeholder="Your Message" rows="3" name="message" required></textarea>
+                            </div>
+                            
+                            <button class="btn btn-send" type="submit">Send me</button>
+                        </form>
+
+                        <div id="contact-msg" style="margin-top: 15px; font-weight: bold;"></div>
+
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+   
+     
+
+         <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="block">
+                            <p>Copyright &copy; <a href="http://SurveilEyesSolutions.com">SurveilEyesSolutions</a>| All right reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Js -->
+         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="js/vendor/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="js/jquery.lwtCountdown-1.0.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/jquery.form.js"></script>
+        <script src="js/jquery.nav.js"></script>
+        <script src="js/wow.min.js"></script>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script> -->
+        <script src="js/main.js"></script>
+
+    </body>
+</html>

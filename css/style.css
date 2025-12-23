@@ -1,0 +1,886 @@
+/* ==========================================================================
+   1. GLOBAL STYLES & TYPOGRAPHY
+   ========================================================================== */
+body {
+    font-family: 'Source Sans Pro', sans-serif, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 25px;
+    color: #3b4045;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden; /* Safety net for side-scrolling */
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    margin: 0;
+}
+
+h1 {
+    font-size: 44px;
+    line-height: 56px;
+    color: #fff;
+}
+
+h2 {
+    font-size: 30px;
+    line-height: 35px;
+}
+
+h3 {
+    font-size: 23px;
+    line-height: 25px;
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+p {
+    font-size: 16px;
+    line-height: 25px;
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+/* Global Section Padding */
+.section {
+    padding: 100px 0;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn:focus, .btn:active {
+    box-shadow: none;
+    outline: none;
+}
+
+/* Headings & Text Alignment */
+.text-center {
+    text-align: center;
+}
+
+.heading {
+    text-align: center;
+    color: #777;
+    padding-bottom: 70px;
+}
+
+.heading h2 {
+    color: #3c3c3c;
+    padding-bottom: 15px;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 40px;
+}
+
+.heading p {
+    font-family: 'Droid Serif', serif;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   2. PRELOADER
+   ========================================================================== */
+#preloader {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 14, 20, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999; /* Highest Z-Index */
+}
+
+.camera {
+    position: relative;
+    width: 140px;
+    height: 140px;
+}
+
+.outer-ring, .arc {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+}
+
+.outer-ring {
+    border: 3px solid rgba(0, 242, 255, 0.15);
+}
+
+.arc {
+    border: 4px solid transparent;
+}
+
+.arc1 {
+    border-top-color: #00f2ff;
+    border-bottom-color: #00f2ff;
+    animation: spin 1.8s linear infinite;
+}
+
+.arc2 {
+    inset: 10px;
+    border-left-color: #009dff;
+    border-right-color: #009dff;
+    animation: spinReverse 2.8s linear infinite;
+}
+
+.lens {
+    position: absolute;
+    inset: 38px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #1fbfff 0%, #0a3a66 45%, #020b14 75%);
+    box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.8);
+}
+
+.lens-core {
+    position: absolute;
+    inset: 12px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #0ff, #022);
+    opacity: 0.35;
+}
+
+.lens-dot {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: #eaffff;
+    border-radius: 50%;
+    top: 22%;
+    left: 58%;
+    opacity: 0.85;
+}
+
+.loading-text {
+    margin-top: 40px;
+    color: #00f2ff;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 4px;
+    font-weight: bold;
+    min-height: 20px;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes spinReverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+/* ==========================================================================
+   3. NAVIGATION
+   ========================================================================== */
+.navigation {
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+    padding: 10px 50px;
+    margin: 0;
+    border: 0;
+}
+
+.navigation.animated {
+    background-color: #fff;
+    box-shadow: 0 2px 7px 0px rgba(142, 142, 142, 0.15);
+}
+
+.navigation.animated .menu a {
+    color: #666;
+}
+
+.navbar-brand {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    padding-top: 5px;
+}
+
+.brand-text {
+    color: #00ffff;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.brand-text:hover, .nav-link:hover {
+    color: #05adad;
+}
+
+.menu li a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.menu li a:hover, .menu li a:focus {
+    background: none;
+}
+
+.navigation .navbar-toggler {
+    background: #fff;
+    outline: none;
+    border-radius: 0;
+    float: right;
+}
+
+.navigation .navbar-toggler i {
+    font-size: 22px;
+}
+
+/* ==========================================================================
+   4. HERO SECTION
+   ========================================================================== */
+.bg-1 {
+    background-image: url("../images/Surveil/back.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.bg-gray {
+    background: #f8f8f8;
+}
+
+.hero-area {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-area h1 {
+    color: #fff;
+    font-size: 60px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-bottom: 19px;
+    margin-top: 30px;
+}
+
+.hero-area p {
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.btn-home {
+    background-color: #1bafb4;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 40px;
+    margin-top: 30px;
+    border: 1px solid transparent;
+}
+
+.btn-home:hover {
+    background-color: #fff;
+    color: #555;
+    border: 1px solid #fff;
+}
+
+/* Hero Counters */
+.hero-area .counter {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 18px;
+}
+
+.hero-area .counter ul li {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    display: inline-block;
+    line-height: 25px;
+    padding: 25px 28px 20px;
+    text-align: center;
+    width: 49%;
+    margin-bottom: 3px;
+}
+
+.hero-area .counter ul li span {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.hero-area .counter ul li .digit {
+    display: inline-block;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 50px;
+    height: 60px;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   5. SECTIONS (About & Services)
+   ========================================================================== */
+/* About */
+.about .content h3 {
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 36px;
+    color: #7e7e7e;
+    margin-bottom: 20px;
+    font-family: 'Droid Serif', serif;
+}
+
+.about .about-slider img {
+    width: 100%;
+    height: auto;
+}
+
+/* Services */
+.service {
+    text-align: center;
+}
+
+.service .block {
+    margin-bottom: 50px;
+}
+
+.service .block i {
+    font-size: 30px;
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #1bafb4;
+}
+
+.service .block h3 {
+    color: #333;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.service .block p {
+    color: #666;
+}
+
+/* ==========================================================================
+   6. PRICING PLANS
+   ========================================================================== */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.pricing-card {
+    border: 1px solid #eee;
+    padding: 40px 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    background: #fff;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    border-color: #00a8b4;
+}
+
+.featured {
+    border: 2px solid #00a8b4;
+}
+
+.badge {
+    background: #00a8b4;
+    color: white;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.plan-icon {
+    font-size: 40px;
+    color: #00a8b4;
+    margin-bottom: 20px;
+}
+
+.plan-name {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.price {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.commitment {
+    color: #00a8b4;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.total-payment {
+    background: #f9f9f9;
+    padding: 10px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    margin-bottom: 25px;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.features-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.features-list li::before {
+    content: "✓";
+    color: #00a8b4;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.pricing-card .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #333;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: background 0.3s;
+}
+
+.pricing-card .btn:hover {
+    background-color: #00a8b4;
+}
+
+/* ==========================================================================
+   7. CALL TO ACTION (Subscribe)
+   ========================================================================== */
+.call-to-action {
+    padding: 90px 0;
+    background-image: url(../images/call-to-action-.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+}
+
+.call-to-action:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.call-to-action .block h2 {
+    font-size: 30px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.call-to-action .block p {
+    padding-right: 30px;
+    color: #fff;
+}
+
+.call-to-action .block .input-group {
+    margin-top: 30px;
+}
+
+.call-to-action .block .input-group input {
+    height: 50px;
+    border-radius: 0;
+    border: none;
+}
+
+.call-to-action .block .input-group .btn-subscription {
+    height: 50px;
+    border-radius: 0;
+    border: none;
+    background: #1bafb4;
+    padding: 0 35px;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   8. CONTACT SECTION
+   ========================================================================== */
+.section-container {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: stretch;
+}
+
+.contact-form-wrapper {
+    flex: 1 1 500px;
+    background: #fff;
+    padding: 20px;
+}
+
+.form-group, .input-field {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    background: #f5f5f5;
+    box-shadow: none;
+    font-weight: 500;
+    outline: none;
+}
+
+.form-control:focus {
+    border-color: #00a8b4;
+}
+
+.input-field textarea.form-control {
+    height: 160px;
+}
+
+.btn-send {
+    background-color: #00a8b4;
+    color: #fff;
+    border: 2px solid #00a8b4;
+    padding: 15px 40px;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-send:hover {
+    background-color: #2f8d94;
+    border-color: #2f8d94;
+    color: #fff;
+}
+
+/* Success/Error Messages */
+#success, #error, #error-message {
+    display: none;
+}
+
+#error-message {
+    color: #d32f2f;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   9. FOOTER
+   ========================================================================== */
+footer {
+    text-align: center;
+    background: #272727;
+    padding: 27px 0;
+}
+
+footer p {
+    font-weight: 300;
+    font-size: 12px;
+    color: #dfdfdf;
+    letter-spacing: 3px;
+}
+
+footer p a {
+    color: #fff;
+}
+
+footer p a:hover {
+    color: #fff;
+}
+
+/* ==========================================================================
+   10. CHAT WIDGET
+   ========================================================================== */
+.chat-bubble {
+    position: fixed;
+    right: 30px;
+    background-color: #00a8b4;
+    color: white !important;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 26px;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 9999;
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-bubble:hover {
+    transform: scale(1.2);
+}
+
+.chat-window {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 10000;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-header {
+    background-color: #00a8b4;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+}
+
+.bot-msg, .user-msg {
+    margin: 5px 0;
+    padding: 8px 12px;
+    border-radius: 15px;
+    max-width: 80%;
+    font-size: 14px;
+}
+
+.bot-msg {
+    background-color: #e0e0e0;
+    color: #333;
+    align-self: flex-start;
+}
+
+.user-msg {
+    background-color: #00a8b4;
+    color: white;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.chat-footer {
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+
+.chat-footer input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.chat-footer button {
+    background-color: #00a8b4;
+    color: white;
+    border: none;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+
+/* ==========================================================================
+   11. MEDIA QUERIES (RESPONSIVE)
+   ========================================================================== */
+
+/* --- Tablet & Mobile Navigation (991px and below) --- */
+@media (max-width: 991px) {
+    /* Full Screen Navigation Modal */
+    #navbarResponsive.in {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #00a8b4 !important; /* SOLID TEAL */
+        z-index: 99990 !important;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #navbarResponsive.in .menu {
+        width: 100%;
+        text-align: center;
+    }
+
+    #navbarResponsive.in .menu li {
+        display: block;
+        margin: 15px 0;
+    }
+
+    #navbarResponsive.in .menu li a {
+        color: #fff !important;
+        font-size: 24px !important;
+        font-weight: bold;
+        display: block;
+    }
+
+    /* Fixed Hamburger Toggle */
+    .navbar-toggler {
+        position: fixed;
+        top: 25px;
+        right: 25px;
+        z-index: 99999 !important;
+    }
+    
+    .navbar-toggler i {
+        transition: color 0.3s;
+    }
+}
+
+/* --- Mobile Devices (768px and below) --- */
+@media (max-width: 768px) {
+    
+    /* Typography adjustments */
+    .section { padding: 60px 0; }
+    h1 { font-size: 34px; line-height: 44px; }
+    h2 { font-size: 26px; line-height: 32px; }
+    .heading { padding-bottom: 40px; }
+    .heading h2 { font-size: 30px; line-height: 36px; }
+
+    /* Navigation */
+    .navigation { padding: 10px 15px; }
+
+    /* Hero Section */
+    .hero-area { 
+        height: auto; 
+        padding: 100px 0 50px; 
+        min-height: 100vh; 
+    }
+    .hero-area h1 { font-size: 36px; padding-bottom: 10px; }
+    .hero-area .counter { margin-top: 30px; }
+    .hero-area .counter ul li { 
+        width: 48%; 
+        padding: 15px 10px; 
+        font-size: 12px; 
+    }
+    .hero-area .counter ul li .digit { 
+        font-size: 30px; 
+        height: 35px; 
+        line-height: 35px; 
+    }
+
+    /* Preloader Size */
+    .camera { width: 90px; height: 90px; }
+    .lens { inset: 22px; }
+    .lens-core { inset: 7px; }
+    .arc { border-width: 3px; }
+    .loading-text { margin-top: 20px; font-size: 14px; letter-spacing: 1px; }
+
+    /* Contact Section */
+    .contact-grid { flex-direction: column; gap: 20px; }
+    .section-container { margin: 40px auto; }
+
+    /* Call to Action */
+    .call-to-action { padding: 50px 0; }
+    .call-to-action .block p { padding-right: 0; }
+    
+    /* Chat Widget Fix */
+    .chat-window {
+        right: 5% !important;
+        left: 5% !important;
+        width: 90% !important;
+        bottom: 90px !important;
+        height: 60vh !important;
+    }
+    .chat-bubble {
+        right: 10px !important;
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 20px;
+    }
+    
+    /* Re-stack bubbles nicely */
+    a.chat-bubble[href*="mailto"] { bottom: 140px !important; }
+    a.chat-bubble[href*="wa.me"] { bottom: 85px !important; }
+    div.chat-bubble { bottom: 30px !important; }
+}
+
+/* --- Tiny Screens (380px and below) --- */
+@media (max-width: 380px) {
+    /* Hide extra bubbles on very small phones to prevent clutter */
+    a.chat-bubble[href*="mailto"], 
+    a.chat-bubble[href*="wa.me"] {
+        display: none !important;
+    }
+}
