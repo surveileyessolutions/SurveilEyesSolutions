@@ -239,5 +239,90 @@ and (max-width : 1100px) {
     
 }
 
+/* ==============================================
+   MOBILE: SQUARE GRID & ALIGNED TEXT FIX
+   ============================================== */
 
+@media only screen and (max-width : 767px) {
+   
+    /* 1. Container Height - Allow it to grow for the grid */
+    #main-slide {
+        height: auto !important; /* Let content dictate height */
+        min-height: 60vh; /* At least full screen */
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: column;
+    }
 
+    /* 2. Text Alignment - Move to Top Half */
+    .hero-flex-wrapper {
+        position: relative !important; /* Not absolute anymore on mobile */
+        height: auto !important;
+        padding: 30px 15px 40px 15px; /* Top padding clears navbar */
+        flex: 1; /* Takes available space above grid */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* 3. Typography Scaling */
+    .hero-title {
+        font-size: 28px !important;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+    
+    .hero-subtitle {
+        font-size: 14px !important;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        max-width: 90%; /* Prevent hitting edges */
+    }
+
+    .btn-teal {
+        padding: 12px 25px;
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    /* 4. THE SQUARE GRID (Expands Downwards) */
+    .hero-stats-container {
+        position: relative !important; /* Flow naturally at bottom */
+        height: auto;
+        background: rgba(0,0,0,0.2); /* Slight separation */
+    }
+
+    /* Make items strictly 50% width and SQUARE */
+    .stats-box {
+        width: 50%;
+        float: left;
+        position: relative;
+        /* Aspect Ratio Trick: Padding-bottom % is based on WIDTH */
+        height: 0;
+        padding-bottom: 50%; /* Makes height = width (Perfect Square) */
+        padding-top: 0;
+        border: 1px solid rgba(255,255,255,0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Centering content inside the square (Absolute needed due to padding hack) */
+    .stats-box-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Adjust font inside squares */
+    .stats-box h3 { font-size: 26px !important; margin-bottom: 5px; }
+    .stats-box span { font-size: 12px; }
+    
+    /* Remove the 'last-child' border removal for cleaner grid */
+    .stats-box:last-child { border-right: 1px solid rgba(255,255,255,0.1); }
+    .stats-box:nth-child(2n) { border-right: none; } /* Remove right border on even items */
+}

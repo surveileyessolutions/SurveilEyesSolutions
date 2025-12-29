@@ -60,7 +60,7 @@
     
     <!-- Styleswitcher
 ================================================== -->
-        <!-- <div class="colors-switcher">
+        <div class="colors-switcher" style="display: none;">
             <a id="show-panel" class="hide-panel"><i class="fa fa-tint"></i></a>        
                 <ul class="colors-list">
                     <li><a title="Light Red" onClick="setActiveStyleSheet('light-red'); return false;" class="light-red"></a></li>
@@ -73,7 +73,7 @@
                     
                 </ul>
 
-        </div>   -->
+        </div>  
 <!-- Styleswitcher End
 ================================================== -->
 
@@ -81,15 +81,24 @@
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
+           <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">SurveilEyesSolutions</a>
+
+                <a class="navbar-brand page-scroll" href="#page-top" style="display:flex; align-items:center; gap:8px;">
+                    <img 
+                        src="images/Logo.jpeg" 
+                        alt=""
+                        style="height:28px; width:auto; filter: drop-shadow(0 0 1px rgba(0,0,0,0.3));"
+                    >
+                    <span>SurveilEyesSolutions</span>
+                </a>
             </div>
+
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -129,76 +138,81 @@
     
     
     <!-- Start Home Page Slider -->
-    <section id="page-top">
-        <!-- Carousel -->
-        <div id="main-slide" class="carousel slide" data-ride="carousel">
+    <!-- Item 1: Perfect Alignment Design -->
+    <div class="item active hero-slide " id="page-top">
+        
+        <!-- 1. Dark Overlay (Fixed) -->
+        <div class="hero-overlay"></div>
 
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#main-slide" data-slide-to="0" class="active"></li>
-                <li data-target="#main-slide" data-slide-to="1"></li>
-                <li data-target="#main-slide" data-slide-to="2"></li>
-            </ol>
-            <!--/ Indicators end-->
+        <!-- Background Image -->
+        <img class="img-responsive" src="images/header-bg-1.jpg" alt="slider">
+        
+        <!-- 2. Flex Container for Perfect Centering -->
+        <div class="hero-flex-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        
+                        <!-- Main Title -->
+                        <h1 class="hero-title animated3">
+                            SURVEIL EYES
+                        </h1>
+                        
+                        <!-- Subtitle -->
+                        <p class="hero-subtitle animated2">
+                            Your Security, Our Mission.<br>Always Watching, Always Secure.
+                        </p>   
+                        
+                        <!-- Button -->
+                        <div class="animated1">
+                            <a href="#contact" class="btn btn-teal">
+                                Get in touch <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </div>
 
-            <!-- Carousel inner -->
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img class="img-responsive" src="images/header-bg-1.jpg" alt="slider">
-                    <div class="slider-content">
-                        <div class="col-md-12 text-center">
-                            <h1 class="animated3">
-                                <span><strong>SurveilEyesSolutions</strong></span>
-                            </h1>
-                            <p class="animated2">Your Security Our mission. Always Watching, Always secure!<br> We protect your assets in real time.</p>   
-                            <a href="#contact" class="page-scroll btn btn-primary animated1">Get in touch -></a>
-                        </div>
                     </div>
                 </div>
-                <!--/ Carousel item end -->
-                
-                <div class="item">
-                    <img class="img-responsive" src="images/header-back.png" alt="slider">
-                    
-                    <div class="slider-content">
-                        <div class="col-md-12 text-center">
-                            <h1 class="animated1">
-                              <span>Welcome to <strong>SurveilEyes</strong></span>
-                            </h1>
-                            <p class="animated2">We watch over your security cameras 24/7, 365 days a year<br> to detect theft and suspicious behavior.</p>
-                            <a href="#feature" class="page-scroll btn btn-primary animated3">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <!--/ Carousel item end -->
-                
-                <div class="item">
-                    <img class="img-responsive" src="images//galaxy.jpg" alt="slider">
-                    <div class="slider-content">
-                        <div class="col-md-12 text-center">
-                            <h1 class="animated2">
-                                <span>Peace of <strong>Mind</strong></span>
-                            </h1>
-                            <p class="animated1">Detect unusual activity before it becomes a problem.<br> Reliable experts monitoring at all times.</p>   
-                             <a class="animated3 slider btn btn-primary btn-min-block" href="#pricing">Get Plans</a><a class="animated3 slider btn btn-default btn-min-block" href="#contact">Contact Us</a>
-                                
-                        </div>
-                    </div>
-                </div>
-                <!--/ Carousel item end -->
             </div>
-            <!-- Carousel inner end-->
-
-            <!-- Controls -->
-            <a class="left carousel-control" href="#main-slide" data-slide="prev">
-                <span><i class="fa fa-angle-left"></i></span>
-            </a>
-            <a class="right carousel-control" href="#main-slide" data-slide="next">
-                <span><i class="fa fa-angle-right"></i></span>
-            </a>
         </div>
-        <!-- /carousel -->
-    </section>
+
+        <!-- 3. The Glass Stats Grid -->
+        <div class="hero-stats-container animated2">
+            <div class="container-fluid" style="padding:0;">
+                <div class="row no-gutters">
+                    
+                    <div class="col-xs-6 col-sm-3 stats-box">
+                        <div class="stats-box-content">
+                            <h3 class="count-up" data-target="365">0</h3>
+                            <span>Days Active</span>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3 stats-box">
+                        <div class="stats-box-content">
+                            <h3 class="count-up" data-target="24">0</h3>
+                            <span>Monitoring (Hours)</span>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3 stats-box">
+                        <div class="stats-box-content">
+                            <h3 class="count-up" data-target="100">0</h3>
+                            <span>Secure (%)</span>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3 stats-box">
+                        <div class="stats-box-content">
+                            <h3 class="count-up" data-target="0">0</h3>
+                            <span>Incidents</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
     <!-- End Home Page Slider -->
 
     
@@ -266,28 +280,37 @@
                 
                 <div class="col-md-4">
                     <div class="welcome-section text-center">
-                        <img src="images/about-01.jpg" class="img-responsive" alt="..">
+                        <img src="images/sur/pic1.jpeg" alt="..">
                         <h4>Who We Are</h4>
                         <div class="border"></div>
                         <p>We are a professional remote surveillance and monitoring company dedicated to helping businesses protect their assets, employees, and customers in real time.</p>
+                        <button class="btn about-btn" data-about="who">
+                            Learn More
+                        </button>
                     </div>
                 </div>
                 
                 <div class="col-md-4">
                     <div class="welcome-section text-center">
-                        <img src="images/about-02.jpg" class="img-responsive" alt="..">
+                        <img src="images/sur/pic2.jpeg" class="img-responsive" alt="..">
                         <h4>Our Mission</h4>
                         <div class="border"></div>
                         <p>Our mission is to give business owners peace of mind by ensuring that their investment in security is actively monitored and supported by reliable experts at all times.</p>
+                        <button class="btn about-btn" data-about="mission">
+                            Learn More
+                        </button>
                     </div>
                 </div>
                 
                 <div class="col-md-4">
                     <div class="welcome-section text-center">
-                        <img src="images/about-03.jpg" class="img-responsive" alt="..">
+                        <img src="images/sur/pic4.jpeg" class="img-responsive" alt="..">
                         <h4>What We Do</h4>
                         <div class="border"></div>
                         <p>With a highly trained team and advanced monitoring technology, we watch over your security cameras 24/7 to detect theft and suspicious behavior.</p>
+                        <button class="btn about-btn" data-about="what">
+                            Learn More
+                        </button>
                     </div>
                 </div>
                 
@@ -295,158 +318,215 @@
             
         </div><!-- /.container -->
     </section>
+   
     <!-- End About Us Section -->
 
     <hr>
 
+     <!-- modal start -->
+     <div class="modal fade about-modal" id="aboutModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
 
+            <button type="button" class="close modal-close" data-dismiss="modal">&times;</button>
+
+            <div class="modal-body">
+                <div class="row align-items-center">
+                
+                <div class="col-md-6 text-center">
+                    <img id="aboutModalImg" class="img-fluid modal-img" alt="">
+                </div>
+
+                <div class="col-md-6">
+                    <h3 id="aboutModalTitle"></h3>
+                    <p id="aboutModalDesc"></p>
+                </div>
+
+                </div>
+            </div>
+
+            </div>
+        </div>
+     </div>
+
+     <!-- modal end -->
     <!-- Start Feature Section -->
+     
+
         <section id="service" class="services-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-title text-center">
-                            <h3>Our Services</h3>
-                            <p>Find the best services to get secured</p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="section-title text-center">
+                                <h3>Our Services</h3>
+                                <p>Find the best services to get secured <br><sub><b>Note: press icons to read breifly.</b></sub></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Holistic Coverage -->
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="feature-2">
+                                <div class="media service-btn" 
+                                    data-img="images/sur/Holistic.png"
+                                    data-title="Holistic Coverage"
+                                    data-desc="Our security system ensures complete monitoring of your premises, covering every entrance, exit, corridor, and sensitive area. By eliminating blind spots and providing real-time surveillance, we help prevent potential threats before they escalate. This comprehensive approach gives you full situational awareness and confidence in the safety of your facility.">
+                                    <div class="pull-left">
+                                        <i class="fa fa-map-marker"></i>
+                                        <div class="border"></div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Holistic Coverage</h4>
+                                        <p>From entrances to sensitive areas, every angle is actively monitored to prevent blind spots.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Actionable Reporting -->
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="feature-2">
+                                <div class="media service-btn" 
+                                    data-img="images/sur/Actionable.png"
+                                    data-title="Actionable Reporting"
+                                    data-desc="We provide detailed yet easy-to-understand reports that summarize every alert, incident, and activity. These actionable insights allow you to make informed decisions quickly, prioritize responses, and optimize your security operations. With clear reporting, you can track trends, evaluate risks, and ensure your security team acts efficiently and effectively.">
+                                    <div class="pull-left">
+                                        <i class="fa fa-file-text-o"></i>
+                                        <div class="border"></div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Actionable Reporting</h4>
+                                        <p>Receive clear, concise reports on incidents and alerts to make informed security decisions.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- AI Human Detection -->
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="feature-2">
+                                <div class="media service-btn" 
+                                    data-title="AI Human Detection"
+                                    data-desc="Our advanced AI technology intelligently identifies human presence, distinguishing it from animals, vehicles, or environmental motion. By minimizing false alarms and focusing only on relevant threats, this system enhances real-time monitoring, improves response accuracy, and ensures your security personnel concentrate on genuine security events."
+                                    data-img="images/sur/Ai Human.png">
+                                    <div class="pull-left">
+                                        <i class="fa fa-user"></i>
+                                        <div class="border"></div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">AI Human Detection</h4>
+                                        <p>Advanced AI technology to detect human presence specifically, reducing false alarms.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cloud Storage -->
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="feature-2">
+                                <div class="media service-btn" 
+                                    data-title="Cloud Storage"
+                                    data-desc="All surveillance footage is safely stored in a secure cloud environment, accessible anytime from anywhere. With flexible retention options ranging from short-term storage to extended archives, your data remains protected and retrievable whenever needed. Cloud storage ensures continuity, disaster recovery, and peace of mind that your important recordings are never lost."
+                                    data-img="images/sur/cloud.png">
+                                    <div class="pull-left">
+                                        <i class="fa fa-cloud"></i>
+                                        <div class="border"></div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Cloud Storage</h4>
+                                        <p>Secure cloud storage for your footage, ranging from 7 to 30 days depending on your plan.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Regular Maintenance -->
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="feature-2">
+                                <div class="media service-btn" 
+                                    data-title="Regular Maintenance"
+                                    data-desc="Our proactive maintenance services ensure that every component of your security system is in optimal condition. Routine inspections, preventive servicing, and timely updates minimize downtime, extend the lifespan of equipment, and maintain the reliability of your monitoring infrastructure. With regular maintenance, your system continues to operate flawlessly and efficiently."
+                                    data-img="images/sur/Maintainance.png">
+                                    <div class="pull-left">
+                                        <i class="fa fa-wrench"></i>
+                                        <div class="border"></div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Regular Maintenance</h4>
+                                        <p>Keep your system fully operational with our routine checks and preventive maintenance services.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Trusted Integrity -->
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="feature-2">
+                                <div class="media service-btn" 
+                                    data-title="Trusted Integrity"
+                                    data-desc="Our certified and professional team operates with the highest ethical and security standards. Every piece of data is handled responsibly, monitoring is conducted transparently, and client privacy is always respected. Trusted integrity ensures that your security solutions are not only effective but also reliable, accountable, and professionally managed."
+                                    data-img="images/sur/Integerity.png">
+                                    <div class="pull-left">
+                                        <i class="fa fa-shield"></i>
+                                        <div class="border"></div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Trusted Integrity</h4>
+                                        <p>Our certified team ensures your data is handled securely and all monitoring is done with integrity.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                   <!-- /.col-md-4 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="feature-2">
-                            <div class="media">
-                                <div class="pull-left">
-                                    <i class="fa fa-map-marker"></i>
-                                    <div class="border"></div>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Holistic Coverage</h4>
-                                    <p>From entrances to sensitive areas, every angle is actively monitored to prevent blind spots.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /.col-md-4 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="feature-2">
-                            <div class="media">
-                                <div class="pull-left">
-                                    <i class="fa fa-file-text-o"></i>
-                                    <div class="border"></div>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Actionable Reporting</h4>
-                                    <p>Receive clear, concise reports on incidents and alerts to make informed security decisions.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /.col-md-4 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="feature-2">
-                            <div class="media">
-                                <div class="pull-left">
-                                    <i class="fa fa-user"></i>
-                                    <div class="border"></div>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">AI Human Detection</h4>
-                                    <p>Advanced AI technology to detect human presence specifically, reducing false alarms.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /.col-md-4 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="feature-2">
-                            <div class="media">
-                                <div class="pull-left">
-                                    <i class="fa fa-cloud"></i>
-                                    <div class="border"></div>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Cloud Storage</h4>
-                                    <p>Secure cloud storage for your footage, ranging from 7 to 30 days depending on your plan.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /.col-md-4 -->
-                     <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="feature-2">
-                            <div class="media">
-                                <div class="pull-left">
-                                    <i class="fa fa-wrench"></i>
-                                    <div class="border"></div>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Regular Maintenance</h4>
-                                    <p>Keep your system fully operational with our routine checks and preventive maintenance services.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /.col-md-4 -->
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="feature-2">
-                            <div class="media">
-                                <div class="pull-left">
-                                    <i class="fa fa-shield"></i>
-                                    <div class="border"></div>
-                                </div>
-                                <div class="media-body">
-                                    <h4 class="media-heading">Trusted Integrity</h4>
-                                    <p>Our certified team ensures your data is handled securely and all monitoring is done with integrity.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div><!-- /.row -->
-            
-            </div><!-- /.container -->
-        </section>
+            </section>
+
         <!-- End Feature Section -->
     
     
     <hr>
     <!-- Start Fun Facts Section -->
-    <!-- <section class="fun-facts">
+    <section class="fun-facts">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-3">
                       <div class="counter-item">
                         <i class="fa fa-cloud-upload"></i>
-                        <div class="timer" id="item1" data-to="991" data-speed="5000"></div>
-                        <h5>Files uploaded</h5>                       
+                        <div class="timer" id="item1" data-to="1000" data-speed="5000"></div>
+                        <h5>Camera Installed</h5>                       
                       </div>
                     </div>  
                     <div class="col-xs-12 col-sm-6 col-md-3">
                       <div class="counter-item">
                         <i class="fa fa-check"></i>
-                        <div class="timer" id="item2" data-to="7394" data-speed="5000"></div>
-                        <h5>Projects completed</h5>                       
+                        <div class="timer" id="item2" data-to="110" data-speed="5000"></div>
+                        <h5>Secured Primises</h5>                       
                       </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3">
                       <div class="counter-item">
                         <i class="fa fa-code"></i>
-                        <div class="timer" id="item3" data-to="18745" data-speed="5000"></div>
-                        <h5>Lines of code written</h5>                       
+                        <div class="timer" id="item3" data-to="50" data-speed="5000"></div>
+                        <h5>On board team</h5>                       
                       </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3">
                       <div class="counter-item">
                         <i class="fa fa-male"></i>
-                        <div class="timer" id="item4" data-to="8423" data-speed="5000"></div>
+                        <div class="timer" id="item4" data-to="15" data-speed="5000"></div>
                         <h5>Happy clients</h5>                       
                       </div>
                     </div>
             </div>
         </div>
-    </section> -->
+    </section>
     <!-- End Fun Facts Section -->
 
 
 
     <!-- Start Team Member Section -->
-    <section id="team" class="team-member-section">
+    <!-- <section id="team" class="team-member-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12">
@@ -566,7 +646,7 @@
             </div>
                 
         </div>
-    </section>
+    </section> -->
     <!-- End Team Member Section -->
 
     <br><br>
@@ -607,7 +687,8 @@
                                     </ul>
                                 </div>
                                 <div class="plan-signup">
-                                    <a href="#" class="btn-system btn-small">Get Started</a>
+                                    <a href="https://wa.me/12817367985?text=Hey%20there%20I%20want%20to%20proceed%20with%20Basic%20Plan." class="btn-system btn-small">Get Started</a>
+                                    <a href="javascript:void(0);" class="btn-blue-outline compare-trigger" data-plan="Basic Secure">Compare vs Others</a>  
                                 </div>
                             </div>
                         </div>
@@ -631,7 +712,8 @@
                                     </ul>
                                 </div>
                                 <div class="plan-signup">
-                                    <a href="#" class="btn-system btn-small">Secure Now</a>
+                                    <a href="https://wa.me/12817367985?text=Hey%20there%20I%20want%20to%20proceed%20with%20Advance%20Shield." class="btn-system btn-small">Secure Now</a>
+                                    <a href="javascript:void(0);" class="btn-blue-outline compare-trigger" data-plan="Advance Shield">Compare vs Others</a>
                                 </div>
                             </div>
                         </div>
@@ -655,7 +737,8 @@
                                     </ul>
                                 </div>
                                 <div class="plan-signup">
-                                    <a href="#" class="btn-system btn-small">Go Elite</a>
+                                    <a href="https://wa.me/12817367985?text=Hey%20there%20I%20want%20to%20proceed%20with%20Elite%20Guardian." class="btn-system btn-small">Go Elite</a>
+                                    <a href="javascript:void(0);" class="btn-blue-outline compare-trigger" data-plan="Elite Guardian">Compare vs Others</a>
                                 </div>
                             </div>
                         </div>
@@ -666,6 +749,37 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="uniqueCompareModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ucmTitle"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body p-0">
+                        <div class="comp-grid table-header">
+                            <div class="col-feature" style="color:#555;">Feature</div>
+                            <div class="col-status text-others">Others</div>
+                            <div class="col-status text-us">Us</div>
+                        </div>
+                        
+                        <div id="ucmBody" style="max-height: 60vh; overflow-y: auto;"></div>
+                    </div>
+
+                    <div class="modal-footer justify-content-center border-0">
+                        <small class="text-muted">SurveilEyes Solutions &copy;</small>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+  
+   
     <!-- End Pricing Table Section -->
     
     
@@ -678,45 +792,57 @@
     <!-- Start Testimonial Section -->
     <div id="testimonial" class="testimonial-section">
         <div class="container">
-            <!-- Start Testimonials Carousel -->
             <div id="testimonial-carousel" class="testimonials-carousel">
+
                 <!-- Testimonial 1 -->
                 <div class="testimonials item">
                     <div class="testimonial-content">
-                        <img src="images/testimonial/face_1.png" alt="" >
                         <div class="testimonial-author">
-                            <div class="author">John Doe</div>
-                            <div class="designation">Organization Founder</div>
+                            <div class="author">Michael Thompson</div>
+                            <div class="designation">Operations Director, UK</div>
                         </div>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque<br> laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
+                        <p>
+                            Managing security across multiple locations was a challenge until we partnered with this team.
+                            Their 24/7 live monitoring and rapid response have significantly reduced incidents and improved
+                            our overall safety standards.
+                        </p>
                     </div>
                 </div>
+
                 <!-- Testimonial 2 -->
                 <div class="testimonials item">
                     <div class="testimonial-content">
-                        <img src="images/testimonial/face_2.png" alt="" >
                         <div class="testimonial-author">
-                            <div class="author">Jane Doe</div>
-                            <div class="designation">Lead Developer</div>
+                            <div class="author">Emily Rodriguez</div>
+                            <div class="designation">Facility Manager, USA</div>
                         </div>
-                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia<br> consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                        <p>
+                            What impressed us most was their professionalism and attention to detail.
+                            Alerts are handled immediately, and the communication is clear and reliable.
+                            It feels like having an in-house security team watching our sites at all times.
+                        </p>
                     </div>
                 </div>
+
                 <!-- Testimonial 3 -->
                 <div class="testimonials item">
                     <div class="testimonial-content">
-                        <img src="images/testimonial/face_3.png" alt="" >
                         <div class="testimonial-author">
-                            <div class="author">John Doe</div>
-                            <div class="designation">Honorable Customer</div>
+                            <div class="author">Daniel Müller</div>
+                            <div class="designation">Property Owner, Germany</div>
                         </div>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit<br> anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p>
+                            Their remote surveillance service gave us complete peace of mind.
+                            Even from abroad, I can trust that every alert is monitored and acted upon instantly.
+                            The service is efficient, secure, and truly dependable.
+                        </p>
                     </div>
                 </div>
+
             </div>
-            <!-- End Testimonials Carousel -->
         </div>
     </div>
+
     <!-- End Testimonial Section -->
     
     
@@ -813,9 +939,14 @@
                             <ul class="pull-right">
                                 <li>
                                     <a href="#">All right are reserved</a>
+                                    
                                 </li>
                                 <li>
-                                    <!-- <a href="#">Terms of Use</a> -->
+                                   <img 
+                                        src="images/Logo.jpeg" 
+                                        alt=""
+                                        style="height:28px; width:auto; filter: drop-shadow(0 0 1px rgba(0,0,0,0.3));"
+                                    >
                                 </li>
                             </ul>
                         </div>
@@ -856,12 +987,18 @@
         </div>
     </div>
 
-    <div id="loader">
-        <div class="spinner">
-            <div class="dot1"></div>
-            <div class="dot2"></div>
+        <div id="preloader">
+            <div class="camera">
+                <div class="outer-ring"></div>
+                <div class="arc arc1"></div>
+                <div class="arc arc2"></div>
+                <div class="lens">
+                    <div class="lens-core"></div>
+                    <div class="lens-dot"></div>
+                </div>
+            </div>
+            <p id="loading-text" class="loading-text"></p>
         </div>
-    </div>
 
     
 
@@ -1131,6 +1268,234 @@
             });
             }
     </script>
+     <!-- Animations Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- 1. COUNT UP ANIMATION ---
+            const counters = document.querySelectorAll('.count-up');
+            const speed = 200; // The lower the slower
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+
+                    // Lower inc to slow and higher to speed
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        // Add inc to count and output in counter
+                        counter.innerText = Math.ceil(count + inc);
+                        // Call function every ms
+                        setTimeout(updateCount, 15);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+
+                updateCount();
+            });
+
+            // --- 2. TYPEWRITER ANIMATION ---
+            const headingElement = document.getElementById('typewriter-heading');
+            const subElement = document.getElementById('typewriter-sub');
+
+            const phrases = [
+                {
+                    heading: "SURVEILEYESSOLUTIONS",
+                    sub: "Your Security, Our Mission. Always Watching, Always Secure."
+                },
+                {
+                    heading: "PEACE OF MIND",
+                    sub: "We detect unusual activity before it becomes a problem."
+                },
+                {
+                    heading: "24/7 MONITORING",
+                    sub: "Reliable experts watching your assets 365 days a year."
+                }
+            ];
+
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typeSpeed = 100;
+
+            function typeWriter() {
+                const currentPhrase = phrases[phraseIndex];
+                
+                // Determine text to show based on state
+                if (isDeleting) {
+                    // Deleting text
+                    headingElement.textContent = currentPhrase.heading.substring(0, charIndex - 1);
+                    // We don't delete subtitle character by character for smoother look, just fade it or snap it
+                    // But to keep it simple, let's just sync it with the heading deletion
+                    if(charIndex < currentPhrase.sub.length / 2) {
+                         // Only clear sub when heading is half deleted to speed things up
+                         subElement.textContent = ""; 
+                    }
+                    
+                    charIndex--;
+                    typeSpeed = 50; // Faster deletion
+                } else {
+                    // Typing text
+                    headingElement.textContent = currentPhrase.heading.substring(0, charIndex + 1);
+                    
+                    // Simple logic for subtitle: show full subtitle once heading is mostly done
+                    // Or we could type it out too. Let's type heading first, then subtitle appear.
+                    if (charIndex === currentPhrase.heading.length) {
+                         subElement.textContent = currentPhrase.sub;
+                         // Add a fade-in class if we wanted, but textContent works for now
+                    } else {
+                         subElement.textContent = ""; // Keep empty while heading types
+                    }
+                    
+                    charIndex++;
+                    typeSpeed = 150; // Normal typing speed
+                }
+
+                // Logic for switching states
+                if (!isDeleting && charIndex === currentPhrase.heading.length) {
+                    // Finished typing phrase
+                    typeSpeed = 3000; // Pause at end
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    // Finished deleting phrase
+                    isDeleting = false;
+                    phraseIndex++;
+                    if (phraseIndex === phrases.length) {
+                        phraseIndex = 0;
+                    }
+                    typeSpeed = 500; // Pause before new phrase
+                }
+
+                setTimeout(typeWriter, typeSpeed);
+            }
+
+            // Start the typewriter
+            typeWriter();
+        });
+    </script>
+    <!-- Modal About Us -->
+     <script>
+        const aboutData = {
+            who: {
+                title: "Who We Are",
+                img: "images/sur/pic5.jpeg",
+                desc: "Our remote surveillance service is built to deliver continuous protection in an increasingly unpredictable security landscape. By combining advanced monitoring technology with trained human oversight, we ensure that every critical moment is observed and addressed in real time. Whether it’s unauthorized access, suspicious movement, or potential safety risks, our system works proactively to safeguard your premises without disruption to your daily operations. We are a professional remote surveillance and live monitoring company committed to protecting businesses through constant vigilance and intelligent security practices. By combining advanced video technology with trained monitoring professionals, we provide real-time oversight that goes beyond traditional camera systems. Our focus is on prevention, early detection, and rapid response, ensuring that potential threats are identified and addressed before they escalate. We operate as an extension of your security infrastructure, delivering continuous visibility, operational awareness, and dependable protection tailored to modern security challenges.Through intelligent detection, live intervention, and detailed incident reporting, we help businesses stay one step ahead of threats. Our approach goes beyond passive camera recording—providing active security awareness, rapid response coordination, and complete visibility into your security environment at all times."
+            },
+            mission: {
+                title: "Our Mission",
+                img: "images/sur/pic3.jpeg",
+                desc: "Our mission is to transform passive security systems into active protection solutions that deliver true peace of mind. We aim to empower business owners by ensuring their surveillance investments are consistently monitored, intelligently analyzed, and professionally managed at all times. Through proactive monitoring and immediate intervention, we help reduce risks, prevent losses, and strengthen overall safety.By prioritizing reliability, responsiveness, and transparency, we strive to build long-term trust while maintaining the highest standards of security performance."
+            },
+            what: {
+                title: "What We Do",
+                img: "images/sur/pic2.jpeg",
+                desc: "We provide 24/7 live video monitoring services designed to detect suspicious activity, unauthorized access, and potential threats in real time. Our trained operators actively observe surveillance feeds, assess situations as they unfold, and initiate appropriate response actions when required. This proactive approach allows issues to be addressed before they develop into serious incidents.In addition to real-time monitoring, we deliver detailed reporting, timely alerts, and actionable insights—ensuring complete awareness of your security status at all times."
+            }
+        };
+
+        document.querySelectorAll('.about-btn').forEach(btn=>{
+            btn.addEventListener('click',function(){
+                const key = this.dataset.about;
+                const data = aboutData[key];
+
+                document.getElementById('aboutModalTitle').innerText = data.title;
+                document.getElementById('aboutModalImg').src = data.img;
+                document.getElementById('aboutModalDesc').innerText = data.desc;
+
+                $('#aboutModal').modal({
+                    backdrop:'static',
+                    keyboard:false
+                });
+            });
+        });
+        </script>
+        <!-- Service Modal -->
+        <script>
+            const serviceBtns = document.querySelectorAll('.service-btn');
+            const modalImg = document.getElementById('aboutModalImg');
+            const modalTitle = document.getElementById('aboutModalTitle');
+            const modalDesc = document.getElementById('aboutModalDesc');
+
+            serviceBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const title = btn.getAttribute('data-title');
+                    const desc = btn.getAttribute('data-desc');
+                    const img = btn.getAttribute('data-img');
+
+                    modalTitle.textContent = title;
+                    modalDesc.textContent = desc;
+                    modalImg.src = img;
+
+                    $('#aboutModal').modal('show'); // jQuery Bootstrap
+                });
+            });
+        </script>
+       <!-- Price PLan Modal -->
+                 <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        // DATA: Brief Comparison Points
+                        const planFeatures = {
+                            "Basic Secure": [
+                                "24/7 Active Monitoring", "HD Video Quality", "Instant Mobile Alerts",
+                                "7-Day Cloud History", "Two-Way Audio Talk", "Night Vision Capable",
+                                "Motion Triggered Recording", "No Long-term Contracts", 
+                                "Easy Wireless Setup", "99.9% Uptime Guarantee"
+                            ],
+                            "Advance Shield": [
+                                "24/7 Active Monitoring", "AI Human Detection", "Multiple Activity Zones",
+                                "30-Day Cloud History", "Rich Notifications (Snapshot)", 
+                                "Package Delivery Alerts", "Priority Support Line", 
+                                "Automated Siren Response", "Pet Immunity Filters", "Tamper Detection", 
+                                "HD Video Quality"
+                            ],
+                            "Elite Guardian": [
+                                "4K Ultra-HD Resolution", "Dedicated Account Manager", 
+                                "Quarterly On-site Audits", "Facial Recognition AI", 
+                                "Unlimited Cloud Storage", "24/7 Professional Guard Response", 
+                                "License Plate Recognition", "Integrated Smart Home Hub", 
+                                "Lifetime Hardware Warranty", "Priority Police Dispatch", 
+                                "VIP Support Line"
+                            ]
+                        };
+
+                        const compareBtns = document.querySelectorAll('.compare-trigger');
+                        const modalTitle = document.getElementById('ucmTitle');
+                        const modalBody = document.getElementById('ucmBody');
+
+                        compareBtns.forEach(btn => {
+                            btn.addEventListener('click', (e) => {
+                                e.preventDefault();
+
+                                const planName = btn.getAttribute('data-plan');
+                                const features = planFeatures[planName];
+
+                                // 1. Set Title
+                                modalTitle.textContent = planName.toUpperCase() + " VS COMPETITORS";
+
+                                // 2. Build HTML Content (Using new grid structure)
+                                let htmlContent = '';
+                                features.forEach(feature => {
+                                    htmlContent += `
+                                        <div class="comp-grid comp-row">
+                                            <div class="col-feature" style="font-size:14px; font-weight:500; color:#444;">${feature}</div>
+                                            <div class="col-status"><div class="c-cross">&#10005;</div></div>
+                                            <div class="col-status"><div class="c-check">&#10003;</div></div>
+                                        </div>
+                                    `;
+                                });
+                                modalBody.innerHTML = htmlContent;
+
+                                // 3. Show Modal
+                                $('#uniqueCompareModal').modal('show');
+                            });
+                        });
+                    });
+                </script>
+
+
+
 
 </body>
 

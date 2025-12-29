@@ -219,4 +219,96 @@ $('#team a').click(function (e) {
         
     });
 	
+/*---------------------------------------------------*/
+    /*	restrictions
+    /*---------------------------------------------------*/
 
+//       $(document).ready(function() {
+//     // 1. Disable Right-Click (Context Menu)
+//     $(document).bind("contextmenu", function(e) {
+//         return false;
+//     });
+
+//     // 2. Disable F12 and Shortcuts (Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
+//     $(document).keydown(function(e) {
+//         // F12
+//         if (e.keyCode == 123) {
+//             return false;
+//         }
+//         // Ctrl+Shift+I (Inspect)
+//         if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+//             return false;
+//         }
+//         // Ctrl+Shift+J (Console)
+//         if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+//             return false;
+//         }
+//         // Ctrl+U (View Source)
+//         if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+//             return false;
+//         }
+//         // Ctrl+S (Save Page)
+//         if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+//             return false;
+//         }
+//     });
+// });
+
+
+/*---------------------------------------------------*/
+    /*	title change
+    /*---------------------------------------------------*/
+     window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section');
+        const baseTitle = "SurveilEyesSolutions";
+        let currentSection = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          if (window.scrollY >= sectionTop - 150) {
+            currentSection = section.getAttribute('id');
+          }
+        });
+
+        document.title = currentSection ? `${baseTitle} | ${currentSection}` : baseTitle;
+      });
+
+/*---------------------------------------------------*/
+    /*	preloader
+    /*---------------------------------------------------*/
+
+    const text = "SurveilEyesSolutions | HawkEye";
+const el = document.getElementById("loading-text");
+const preloader = document.getElementById("preloader");
+
+let index = 0;
+
+function typeText() {
+    if (index < text.length) {
+        el.textContent += text[index++];
+        setTimeout(typeText, 120); // typing speed
+    } else {
+        // TEXT COMPLETED → REMOVE PRELOADER
+        setTimeout(() => {
+            preloader.style.opacity = "0";
+
+            setTimeout(() => {
+                preloader.remove();
+            }, 600); // fade-out duration
+        }, 300); // tiny pause after completion (optional)
+    }
+}
+
+
+typeText();
+/* CLOSE MOBILE MENU ON CLICK */
+$(document).ready(function () {
+    // When a link inside the mobile menu is clicked...
+    $('#navbarResponsive .menu li a').click(function() {
+        // ...check if the menu is currently visible (open)
+        if ($('#navbarResponsive').hasClass('in')) {
+            // ...and trigger a click on the toggle button to close it
+            $('.navbar-toggler').click();
+        }
+    });
+});
