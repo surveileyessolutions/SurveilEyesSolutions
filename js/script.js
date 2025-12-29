@@ -223,36 +223,36 @@ $('#team a').click(function (e) {
     /*	restrictions
     /*---------------------------------------------------*/
 
-//       $(document).ready(function() {
-//     // 1. Disable Right-Click (Context Menu)
-//     $(document).bind("contextmenu", function(e) {
-//         return false;
-//     });
+      $(document).ready(function() {
+    // 1. Disable Right-Click (Context Menu)
+    $(document).bind("contextmenu", function(e) {
+        return false;
+    });
 
-//     // 2. Disable F12 and Shortcuts (Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
-//     $(document).keydown(function(e) {
-//         // F12
-//         if (e.keyCode == 123) {
-//             return false;
-//         }
-//         // Ctrl+Shift+I (Inspect)
-//         if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-//             return false;
-//         }
-//         // Ctrl+Shift+J (Console)
-//         if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-//             return false;
-//         }
-//         // Ctrl+U (View Source)
-//         if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-//             return false;
-//         }
-//         // Ctrl+S (Save Page)
-//         if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
-//             return false;
-//         }
-//     });
-// });
+    // 2. Disable F12 and Shortcuts (Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
+    $(document).keydown(function(e) {
+        // F12
+        if (e.keyCode == 123) {
+            return false;
+        }
+        // Ctrl+Shift+I (Inspect)
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+            return false;
+        }
+        // Ctrl+Shift+J (Console)
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+            return false;
+        }
+        // Ctrl+U (View Source)
+        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+            return false;
+        }
+        // Ctrl+S (Save Page)
+        if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+            return false;
+        }
+    });
+});
 
 
 /*---------------------------------------------------*/
