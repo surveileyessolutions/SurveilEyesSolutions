@@ -55,10 +55,197 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        /* --- SECTION STYLING --- */
+        #surveil-services {
+            padding: 80px 0;
+            background-color: #ffffff;
+            font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
 
+        .se-section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .se-section-header h3 {
+            font-size: 32px;
+            font-weight: 300;
+            color: #222;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .se-section-header p {
+            font-size: 15px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* --- SERVICE BOX (TRIGGER) --- */
+        .se-service-box {
+            background: #fff;
+            padding: 30px 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            border-radius: 4px;
+            /* Ensure height is uniform */
+            min-height: 280px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        /* Hover Effect: Lift up */
+        .se-service-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Icon Box - Square Cyan */
+        .se-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background-color: #29abe2; /* Cyan */
+            margin: 0 auto 25px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            /* Sharp corners as per screenshot */
+            border-radius: 0px; 
+        }
+
+        .se-icon-wrapper i {
+            font-size: 36px;
+            color: #ffffff;
+        }
+
+        /* Title */
+        .se-service-box h4 {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+
+        /* Tap Hint */
+        .se-service-box .se-tap-hint {
+            font-size: 12px;
+            color: #999;
+            margin-top: auto; /* Pushes to bottom */
+            font-weight: 400;
+        }
+        
+        /* Make the whole box text color change on hover slightly */
+        .se-service-box:hover h4 {
+            color: #29abe2;
+        }
+
+        /* --- MODAL STYLING (Article Theme) --- */
+        .se-modal-content {
+            border-radius: 0;
+            border: none;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+        }
+
+        .se-modal-header {
+            background-color: #222;
+            color: white;
+            border-bottom: 4px solid #29abe2; /* Cyan Border */
+            padding: 20px 30px;
+        }
+
+        .se-modal-title {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 18px;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        .se-close {
+            color: white;
+            opacity: 0.8;
+            font-size: 28px;
+            margin-top: -2px;
+            background: none;
+            border: none;
+            float: right;
+        }
+        .se-close:hover { color: #29abe2; opacity: 1; cursor: pointer;}
+
+        .se-modal-body {
+            padding: 40px;
+            color: #444;
+            line-height: 1.8;
+            font-size: 15px;
+            background: #fff;
+            text-align: left; /* Ensure text is left aligned in modal */
+        }
+
+        /* Article Typography inside Modal */
+        .se-modal-body h3 {
+            color: #29abe2;
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .se-modal-body h4, .se-modal-body h5 {
+            color: #222;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .se-modal-body ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+
+        .se-modal-body ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+        }
+
+        /* Checkmark bullet points */
+        .se-modal-body ul li:before {
+            content: "\f00c"; /* FontAwesome check */
+            font-family: FontAwesome;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: #29abe2;
+        }
+        
+        /* Responsive Fix for mobile */
+        @media (max-width: 768px) {
+            .se-service-box { min-height: auto; padding: 25px; margin-bottom: 20px;}
+            .se-icon-wrapper { width: 60px; height: 60px; }
+            .se-icon-wrapper i { font-size: 24px; }
+        }
+    </style>
 </head>
 
 <body class="index">
+ <div id="floating-bubbles">
     <!-- Email Bubble -->
     <a href="mailto:SurveilEyesSolutions@gmail.com" class="chat-bubble" style="bottom: 170px;" data-aos="fade-up" data-aos-duration="2000">
         <i class="fa fa-envelope"></i>
@@ -73,6 +260,7 @@
     <div class="chat-bubble" onclick="toggleChat()" style="bottom: 30px;" >
         <i class="fa fa-comments"></i>
     </div>
+ </div>
     
     <!-- Styleswitcher
 ================================================== -->
@@ -369,137 +557,525 @@
      <!-- modal end -->
     <!-- Start Feature Section -->
      
-
-        <section id="service" class="services-section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="section-title text-center">
-                                <h3 data-aos="fade-up" data-aos-duration="1000">Our Services</h3>
-                                <p data-aos="fade-up" data-aos-duration="1500">Find the best services to get secured <br><sub><b>Note: press icons to read breifly.</b></sub></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <!-- Holistic Coverage -->
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="feature-2" data-aos="fade-right" data-aos-duration="1000">
-                                <div class="media service-btn" 
-                                    data-img="images/sur/Holistic.png"
-                                    data-title="Holistic Coverage"
-                                    data-desc="Our security system ensures complete monitoring of your premises, covering every entrance, exit, corridor, and sensitive area. By eliminating blind spots and providing real-time surveillance, we help prevent potential threats before they escalate. This comprehensive approach gives you full situational awareness and confidence in the safety of your facility." loading="lazy">
-                                    <div class="pull-left">
-                                        <i class="fa fa-map-marker"></i>
-                                        <div class="border"></div>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">Holistic Coverage</h4>
-                                        <p>From entrances to sensitive areas, every angle is actively monitored to prevent blind spots.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Actionable Reporting -->
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="feature-2" data-aos="fade-right" data-aos-duration="1500">
-                                <div class="media service-btn" 
-                                    data-img="images/sur/Actionable.png"
-                                    data-title="Actionable Reporting"
-                                    data-desc="We provide detailed yet easy-to-understand reports that summarize every alert, incident, and activity. These actionable insights allow you to make informed decisions quickly, prioritize responses, and optimize your security operations. With clear reporting, you can track trends, evaluate risks, and ensure your security team acts efficiently and effectively." loading="lazy">
-                                    <div class="pull-left">
-                                        <i class="fa fa-file-text-o"></i>
-                                        <div class="border"></div>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">Actionable Reporting</h4>
-                                        <p>Receive clear, concise reports on incidents and alerts to make informed security decisions.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- AI Human Detection -->
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="feature-2" data-aos="fade-right" data-aos-duration="2000">
-                                <div class="media service-btn" 
-                                    data-title="AI Human Detection"
-                                    data-desc="Our advanced AI technology intelligently identifies human presence, distinguishing it from animals, vehicles, or environmental motion. By minimizing false alarms and focusing only on relevant threats, this system enhances real-time monitoring, improves response accuracy, and ensures your security personnel concentrate on genuine security events."
-                                    data-img="images/sur/Ai.png" loading="lazy">
-                                    <div class="pull-left">
-                                        <i class="fa fa-user"></i>
-                                        <div class="border"></div>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">AI Human Detection</h4>
-                                        <p>Advanced AI technology to detect human presence specifically, reducing false alarms.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Cloud Storage -->
-                        <div class="col-md-4 col-sm-6 col-xs-12" >
-                            <div class="feature-2" data-aos="fade-right" data-aos-duration="2000">
-                                <div class="media service-btn" 
-                                    data-title="Cloud Storage"
-                                    data-desc="All surveillance footage is safely stored in a secure cloud environment, accessible anytime from anywhere. With flexible retention options ranging from short-term storage to extended archives, your data remains protected and retrievable whenever needed. Cloud storage ensures continuity, disaster recovery, and peace of mind that your important recordings are never lost."
-                                    data-img="images/sur/cloud.png" loading="lazy">
-                                    <div class="pull-left">
-                                        <i class="fa fa-cloud"></i>
-                                        <div class="border"></div>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">Cloud Storage</h4>
-                                        <p>Secure cloud storage for your footage, ranging from 7 to 30 days depending on your plan.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Regular Maintenance -->
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="feature-2" data-aos="fade-right" data-aos-duration="2900">
-                                <div class="media service-btn" 
-                                    data-title="Regular Maintenance"
-                                    data-desc="Our proactive maintenance services ensure that every component of your security system is in optimal condition. Routine inspections, preventive servicing, and timely updates minimize downtime, extend the lifespan of equipment, and maintain the reliability of your monitoring infrastructure. With regular maintenance, your system continues to operate flawlessly and efficiently."
-                                    data-img="images/sur/maintainance.png" loading="lazy">
-                                    <div class="pull-left">
-                                        <i class="fa fa-wrench"></i>
-                                        <div class="border"></div>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">Regular Maintenance</h4>
-                                        <p>Keep your system fully operational with our routine checks and preventive maintenance services.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Trusted Integrity -->
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="feature-2" data-aos="fade-right" data-aos-duration="3000">
-                                <div class="media service-btn" 
-                                    data-title="Trusted Integrity"
-                                    data-desc="Our certified and professional team operates with the highest ethical and security standards. Every piece of data is handled responsibly, monitoring is conducted transparently, and client privacy is always respected. Trusted integrity ensures that your security solutions are not only effective but also reliable, accountable, and professionally managed."
-                                    data-img="images/sur/Integerity.png" loading="lazy">
-                                    <div class="pull-left">
-                                        <i class="fa fa-shield"></i>
-                                        <div class="border"></div>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">Trusted Integrity</h4>
-                                        <p>Our certified team ensures your data is handled securely and all monitoring is done with integrity.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <section id="surveil-services">
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="se-section-header" data-aos="fade-up">
+                        <h3>SurveilEyesSolutions</h3>
+                        <p>Surveil Eyes Solutions provides proactive security solutions for facilities and organizations across diverse industries in North America. Our team monitors over 1000+ cameras and is growing. Explore the menu below to see the various industries we're currently safeguarding.<br><sub><b>Note: Tap icons to read details.</b></sub></p>
                     </div>
                 </div>
-            </section>
+            </div>
 
-        <!-- End Feature Section -->
+            <div class="row">
+                
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="se-service-box" data-toggle="modal" data-target="#modal-construction" data-aos="fade-up" data-aos-delay="100">
+                        <div class="se-icon-wrapper"><i class="fa fa-building"></i></div>
+                        <h4>Construction Site<br>Security Solutions</h4>
+                        <div class="se-tap-hint">Tap to Read</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="se-service-box" data-toggle="modal" data-target="#modal-multifamily" data-aos="fade-up" data-aos-delay="200">
+                        <div class="se-icon-wrapper"><i class="fa fa-users"></i></div>
+                        <h4>Multi-Family Residential<br>Security Solutions</h4>
+                        <div class="se-tap-hint">Tap to Read</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="se-service-box" data-toggle="modal" data-target="#modal-shopping" data-aos="fade-up" data-aos-delay="300">
+                        <div class="se-icon-wrapper"><i class="fa fa-shopping-bag"></i></div>
+                        <h4>Shopping Center<br>Security Solutions</h4>
+                        <div class="se-tap-hint">Tap to Read</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="se-service-box" data-toggle="modal" data-target="#modal-automotive" data-aos="fade-up" data-aos-delay="400">
+                        <div class="se-icon-wrapper"><i class="fa fa-car"></i></div>
+                        <h4>Automotive Dealership<br>Security Solutions</h4>
+                        <div class="se-tap-hint">Tap to Read</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="se-service-box" data-toggle="modal" data-target="#modal-office" data-aos="fade-up" data-aos-delay="100">
+                        <div class="se-icon-wrapper"><i class="fa fa-building-o"></i></div>
+                        <h4>Office Building<br>Security Solutions</h4>
+                        <div class="se-tap-hint">Tap to Read</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="se-service-box" data-toggle="modal" data-target="#modal-industrial" data-aos="fade-up" data-aos-delay="200">
+                        <div class="se-icon-wrapper"><i class="fa fa-industry"></i></div>
+                        <h4>Industrial & Manufacturing<br>Security Solutions</h4>
+                        <div class="se-tap-hint">Tap to Read</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="se-service-box" data-toggle="modal" data-target="#modal-scrap" data-aos="fade-up" data-aos-delay="300">
+                        <div class="se-icon-wrapper"><i class="fa fa-recycle"></i></div>
+                        <h4>Scrap Metal & Recycling<br>Security Solutions</h4>
+                        <div class="se-tap-hint">Tap to Read</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="se-service-box" data-toggle="modal" data-target="#modal-energy" data-aos="fade-up" data-aos-delay="400">
+                        <div class="se-icon-wrapper"><i class="fa fa-bolt"></i></div>
+                        <h4>Energy Security<br>Solutions</h4>
+                        <div class="se-tap-hint">Tap to Read</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="se-service-box" data-toggle="modal" data-target="#modal-transport" data-aos="fade-up" data-aos-delay="100">
+                        <div class="se-icon-wrapper"><i class="fa fa-truck"></i></div>
+                        <h4>Transportation & Logistics<br>Security Solutions</h4>
+                        <div class="se-tap-hint">Tap to Read</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="se-service-box" data-toggle="modal" data-target="#modal-storage" data-aos="fade-up" data-aos-delay="200">
+                        <div class="se-icon-wrapper"><i class="fa fa-cubes"></i></div>
+                        <h4>Self-Storage<br>Security Solutions</h4>
+                        <div class="se-tap-hint">Tap to Read</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="se-service-box" data-toggle="modal" data-target="#modal-cannabis" data-aos="fade-up" data-aos-delay="300">
+                        <div class="se-icon-wrapper"><i class="fa fa-leaf"></i></div>
+                        <h4>Cannabis Security<br>Solutions</h4>
+                        <div class="se-tap-hint">Tap to Read</div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="se-service-box" data-toggle="modal" data-target="#modal-mining" data-aos="fade-up" data-aos-delay="400">
+                        <div class="se-icon-wrapper"><i class="fa fa-diamond"></i></div>
+                        <h4>Metals & Mining<br>Security Solutions</h4>
+                        <div class="se-tap-hint">Tap to Read</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="modal-construction" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content se-modal-content">
+                <div class="modal-header se-modal-header">
+                    <button type="button" class="se-close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title se-modal-title">Construction Site Security</h4>
+                </div>
+                <div class="modal-body se-modal-body">
+                    <h3>Construction Site Live Video Surveillance</h3>
+                    <p>Armor Monitoring’s construction site live video surveillance solutions catch events as they happen, working in real-time. We focus on activity, not just motion, using advanced video analytics and human intelligence. Our proactive approach is 95% more cost-effective than traditional security guards while offering top-notch security and reducing liability.</p>
+                    <h4>Security Concerns</h4>
+                    <h5>SECURITY GUARDS</h5>
+                    <p>Many construction companies hire security guards to monitor their sites, but guards can be costly and have coverage limitations. With Armor’s live video monitoring solution, a team of skilled operators watches your cameras around the clock.</p>
+                    <h5>THEFT & PROPERTY DAMAGE</h5>
+                    <p>Construction sites are prime targets for thieves due to their valuable equipment. Beyond the cost of replacing stolen items, these losses can lead to expensive delays.</p>
+                    <h5>LIABILITY PROTECTION</h5>
+                    <p>Construction site liability is a significant concern. Our live-monitored security system helps mitigate these risks by identifying dangerous situations in real-time.</p>
+                    <h5>REMOTE LOCATIONS</h5>
+                    <p>Armor video monitoring enables remote operators to watch multiple cameras simultaneously, regardless of the project's location.</p>
+                    <h4>OUR PROACTIVE SOLUTION PROVIDES:</h4>
+                    <ul>
+                        <li><b>LIABILITY PROTECTION:</b> Ensure safety protocols are followed.</li>
+                        <li><b>24/7 MONITORING:</b> Round-the-clock coverage for multiple projects.</li>
+                        <li><b>CUSTOMIZED REPORTS AND ANALYTICS:</b> Gain comprehensive insights into site activities.</li>
+                        <li><b>OPERATIONAL IMPROVEMENTS:</b> Access control and authorized entry management.</li>
+                        <li><b>EXTENSIVE SITE COVERAGE:</b> Cameras cover areas inaccessible to guards.</li>
+                        <li><b>QUICKER RESPONSE TIMES:</b> Real-time event confirmation for police priority.</li>
+                        <li><b>INSURANCE SAVINGS:</b> Video monitoring may reduce property premiums.</li>
+                        <li><b>SYSTEM HEALTH CHECK:</b> Regular checks to ensure optimal function.</li>
+                        <li><b>TOTAL SERVICE:</b> Monitoring your entire surveillance data network.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-multifamily" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content se-modal-content">
+                <div class="modal-header se-modal-header">
+                    <button type="button" class="se-close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title se-modal-title">Multi-Family Residential Security</h4>
+                </div>
+                <div class="modal-body se-modal-body">
+                    <h3>Multi Family Apartments Complex Gate Security Surveillance</h3>
+                    <p>Apartment complexes aim to keep their tenants safe while reducing liability risks. Armor Monitoring offers unique solutions that secure apartment complexes and save you money. Our proactive solutions are 95% more cost-effective than traditional security guards.</p>
+                    <h4>Services</h4>
+                    <h5>Remote Concierge</h5>
+                    <p>Enhance residents’ experience with Remote Concierge. Using live video, we secure your building, manage the lobby, handle requests, and manage visitor access.</p>
+                    <h5>Entry Management</h5>
+                    <p>Maximize security with customized entry management. Operators manage access to main doors and vehicle gates using video cameras and intercoms.</p>
+                    <h4>Security Concerns</h4>
+                    <ul>
+                        <li><b>SECURITY GUARDS:</b> Often expensive with limited coverage.</li>
+                        <li><b>DAMAGE TO ENTRANCES:</b> Operators detect suspicious activity before it escalates.</li>
+                        <li><b>AFTER HOURS LOITERING:</b> We deter loitering using speaker systems or police dispatch.</li>
+                        <li><b>THEFT:</b> Real-time alerts when intruders access restricted areas.</li>
+                        <li><b>PARKING LOTS:</b> Analytics-based cameras detect movements and prevent break-ins.</li>
+                    </ul>
+                    <h4>OUR PROACTIVE SOLUTION PROVIDES:</h4>
+                    <ul>
+                        <li>Liability Protection</li>
+                        <li>24/7 Monitoring</li>
+                        <li>Customized Reports and Analytics</li>
+                        <li>Operational Improvements</li>
+                        <li>Extensive Site Coverage</li>
+                        <li>Quicker Response Times</li>
+                        <li>Insurance Savings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-shopping" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content se-modal-content">
+                <div class="modal-header se-modal-header">
+                    <button type="button" class="se-close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title se-modal-title">Shopping Center Security</h4>
+                </div>
+                <div class="modal-body se-modal-body">
+                    <h3>Mall & Retail Shop Camera Security Solution</h3>
+                    <p>Armor Monitoring offers customized video surveillance that operates in real-time, designed to catch events as they happen. Our proactive solutions are typically 95% more cost-effective than traditional security guards.</p>
+                    <h4>Security Concerns</h4>
+                    <h5>SECURITY GUARDS</h5>
+                    <p>Shopping centers often hire security guards, but costs can be high. Armor offers a live video monitoring solution where trained operators watch your cameras simultaneously.</p>
+                    <h5>THEFT</h5>
+                    <p>Items like computers and equipment are valuable targets. Motion sensors alert operators in real-time when intruders access restricted areas.</p>
+                    <h5>PARKING LOTS</h5>
+                    <p>Parking lots are hot spots for theft. Our analytics-based cameras detect movements and alert operators to suspicious activity.</p>
+                    <h4>OUR PROACTIVE SOLUTION PROVIDES:</h4>
+                    <ul>
+                        <li>Liability Protection</li>
+                        <li>24/7 Monitoring</li>
+                        <li>Customized Reports and Analytics</li>
+                        <li>Operational Improvements</li>
+                        <li>Extensive Site Coverage</li>
+                        <li>Quicker Response Times</li>
+                        <li>Insurance Savings</li>
+                        <li>Total Service</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-automotive" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content se-modal-content">
+                <div class="modal-header se-modal-header">
+                    <button type="button" class="se-close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title se-modal-title">Automotive Dealership Security</h4>
+                </div>
+                <div class="modal-body se-modal-body">
+                    <h3>Automotive Dealership Real-Time Surveillance</h3>
+                    <p>Armor Monitoring specializes in automotive dealership live monitoring, offering 24/7 protection for your inventory, showrooms, and parking lots. AI-powered cameras detect threats like trespassing, theft, or vandalism instantly.</p>
+                    <h4>Top Security Concerns</h4>
+                    <h5>Stop Auto Lot Theft & Property Damage</h5>
+                    <p>Auto dealerships are prime targets. With 24/7 remote monitoring, advanced motion detection, and real-time alerts, you can safeguard your car lots.</p>
+                    <h5>Prevent False Damage Claims</h5>
+                    <p>Prevent fraudulent claims by recording every vehicle’s condition upon arrival. Our analysis detects pre-existing damage, ensuring proof in disputes.</p>
+                    <h5>Prevent Catalytic Converter Theft</h5>
+                    <p>Thieves target catalytic converters for valuable metals. Smart video monitoring and perimeter security deter criminals before they strike.</p>
+                    <h5>Eliminate Nighttime Security Risks</h5>
+                    <p>Advanced thermal imaging and low-light cameras provide clear footage in complete darkness.</p>
+                    <h4>Key Benefits</h4>
+                    <ul>
+                        <li>Boost Employee Productivity & Sales</li>
+                        <li>Stop Vandalism in Real-Time</li>
+                        <li>Protect Your Business from Liability</li>
+                        <li>Reduce Insurance Costs</li>
+                        <li>Prevent Hit-and-Run Accidents</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-office" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content se-modal-content">
+                <div class="modal-header se-modal-header">
+                    <button type="button" class="se-close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title se-modal-title">Office Building Security</h4>
+                </div>
+                <div class="modal-body se-modal-body">
+                    <h3>24/7 Live Surveillance for Executive Office Buildings</h3>
+                    <p>Keeping executive building security strong requires more than traditional methods. Our live monitoring offers 24/7 real-time surveillance, protecting against theft, vandalism, and unauthorized access.</p>
+                    <h4>Why Choose Live Monitoring?</h4>
+                    <ul>
+                        <li>Instant incident response & real-time alerts</li>
+                        <li>24/7 remote surveillance without costly on-site guards</li>
+                        <li>AI-driven analytics for smarter security decisions</li>
+                        <li>Reduced liability & enhanced employee safety</li>
+                    </ul>
+                    <h4>Security Concerns</h4>
+                    <h5>THEFT & PROPERTY DAMAGE</h5>
+                    <p>In large buildings, valuable items and sensitive documents are at risk. Armor’s analytics alert monitoring operators in real-time.</p>
+                    <h5>DAMAGE TO ENTRANCES/EXITS</h5>
+                    <p>Operators are skilled at identifying suspicious activity at building entrances before it happens, often communicating directly to prevent criminal behavior.</p>
+                    <h4>OUR PROACTIVE SOLUTION PROVIDES:</h4>
+                    <ul>
+                        <li>Liability Protection</li>
+                        <li>24/7 Monitoring</li>
+                        <li>Customized Reports and Analytics</li>
+                        <li>Operational Improvements</li>
+                        <li>Extensive Site Coverage</li>
+                        <li>Quicker Response Times</li>
+                        <li>Insurance Savings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-industrial" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content se-modal-content">
+                <div class="modal-header se-modal-header">
+                    <button type="button" class="se-close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title se-modal-title">Industrial & Manufacturing Security</h4>
+                </div>
+                <div class="modal-body se-modal-body">
+                    <h3>Industrial Remote Monitoring</h3>
+                    <p>Armor is at the forefront of remote video monitoring solutions for industrial applications. Our operators use voice-down audio deterrents to scare off criminals or report live crimes in progress. Our proactive solutions are generally 95% more cost-effective than traditional guards.</p>
+                    <h4>Security Concerns</h4>
+                    <h5>THEFT & PROPERTY DAMAGE</h5>
+                    <p>Warehouses are prime targets for external and internal theft. Our trained operators can detect and respond to live break-ins and property damage, activating speakers and alerting authorities.</p>
+                    <h5>LIABILITY PROTECTION</h5>
+                    <p>Warehouses face numerous liability risks. Armor Monitoring reduces liability by enhancing security in office areas, vacant spaces, and warehouse buildings.</p>
+                    <h5>FIRE</h5>
+                    <p>Armor cameras can be strategically placed to spot smoke or flames, allowing immediate notification of local fire departments.</p>
+                    <h4>OUR PROACTIVE SOLUTION PROVIDES:</h4>
+                    <ul>
+                        <li>Liability Protection</li>
+                        <li>24/7 Monitoring</li>
+                        <li>Customized Reports and Analytics</li>
+                        <li>Operational Improvements</li>
+                        <li>Extensive Site Coverage</li>
+                        <li>Quicker Response Times</li>
+                        <li>Insurance Savings</li>
+                        <li>Total Service</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-scrap" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content se-modal-content">
+                <div class="modal-header se-modal-header">
+                    <button type="button" class="se-close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title se-modal-title">Scrap Metal & Recycling Security</h4>
+                </div>
+                <div class="modal-body se-modal-body">
+                    <h3>Live Camera Monitoring For Metal Recycling Company</h3>
+                    <p>Our trained security operators use strategically placed cameras to monitor access points and protect assets in real time. When we detect trespassers or break-ins, we can trigger speaker alarms and call for police dispatch.</p>
+                    <h4>Security Concerns</h4>
+                    <h5>SECURITY GUARDS</h5>
+                    <p>Scrap yards often rely on guards, but they can be costly. With Armor’s live video monitoring, you get a team of trained operators ensuring your property is always under surveillance.</p>
+                    <h5>THEFT & PROPERTY DAMAGE</h5>
+                    <p>The outdoor, open nature of scrap yards creates security challenges. Our operators monitor access points in real time and communicate with authorities upon detecting suspicious activity.</p>
+                    <h5>LIABILITY</h5>
+                    <p>Our solution ensures employees follow safety protocols, keeping the yard secure and protecting you from liability.</p>
+                    <h4>OUR PROACTIVE SOLUTION PROVIDES:</h4>
+                    <ul>
+                        <li>Liability Protection</li>
+                        <li>24/7 Monitoring</li>
+                        <li>Customized Reports and Analytics</li>
+                        <li>Operational Improvements</li>
+                        <li>Extensive Site Coverage</li>
+                        <li>Quicker Response Times</li>
+                        <li>Insurance Savings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-energy" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content se-modal-content">
+                <div class="modal-header se-modal-header">
+                    <button type="button" class="se-close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title se-modal-title">Energy Security Solutions</h4>
+                </div>
+                <div class="modal-body se-modal-body">
+                    <h3>Power Plant Security Camera Monitoring</h3>
+                    <p>Energy companies must protect assets, ensure employee safety, and comply with regulations. Traditional perimeter fences offer minimal security. Armor Monitoring recognizes the critical need for securing important infrastructure like solar panels and chemical plants.</p>
+                    <h4>Security Concerns</h4>
+                    <h5>THEFT & PROPERTY DAMAGE</h5>
+                    <p>Unmonitored properties are vulnerable to after-hours break-ins. Criminals know most cameras aren't watched live. Our live monitoring changes that.</p>
+                    <h5>REMOTE LOCATIONS</h5>
+                    <p>Many sites are in rural regions. Stealth video monitoring allows remote operators to monitor multiple cameras simultaneously, regardless of location.</p>
+                    <h4>OUR PROACTIVE SOLUTION PROVIDES:</h4>
+                    <ul>
+                        <li>Liability Protection</li>
+                        <li>24/7 Monitoring</li>
+                        <li>Customized Reports and Analytics</li>
+                        <li>Operational Improvements</li>
+                        <li>Extensive Site Coverage</li>
+                        <li>Quicker Response Times</li>
+                        <li>Insurance Savings</li>
+                        <li>Total Service</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-transport" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content se-modal-content">
+                <div class="modal-header se-modal-header">
+                    <button type="button" class="se-close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title se-modal-title">Logistics & Transportation Security</h4>
+                </div>
+                <div class="modal-body se-modal-body">
+                    <h3>Top Security Challenges in Logistics, Transportation & Distribution</h3>
+                    <p>Armor’s real-time video surveillance solutions catch events as they happen. We monitor activity, not just motion. Our proactive solutions include access control, video monitoring, and remote gate entry/exit control.</p>
+                    <h4>Access Control</h4>
+                    <ul>
+                        <li><b>Cost-Effective Alternative:</b> Replace expensive guards with automated solutions.</li>
+                        <li><b>Verification:</b> Conduct driver ID checks seamlessly.</li>
+                        <li><b>Validation:</b> Ensure correct trailer and tractor validation.</li>
+                        <li><b>Real-Time Tracking:</b> Integrate with inventory management systems.</li>
+                    </ul>
+                    <h4>Security Concerns</h4>
+                    <h5>THEFT & PROPERTY DAMAGE</h5>
+                    <p>Most cargo theft occurs when freight is left unattended. Our trained operators can spot potential break-ins in real time and activate speakers.</p>
+                    <h5>LIABILITY</h5>
+                    <p>Logistics hubs face liability from theft and injury. Our system monitors for risky situations in real time, helping protect you from various liability issues.</p>
+                    <h4>OUR PROACTIVE SOLUTION PROVIDES:</h4>
+                    <ul>
+                        <li>Liability Protection</li>
+                        <li>24/7 Monitoring</li>
+                        <li>Customized Reports and Analytics</li>
+                        <li>Operational Improvements</li>
+                        <li>Extensive Site Coverage</li>
+                        <li>Quicker Response Times</li>
+                        <li>Insurance Savings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-storage" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content se-modal-content">
+                <div class="modal-header se-modal-header">
+                    <button type="button" class="se-close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title se-modal-title">Self-Storage Security</h4>
+                </div>
+                <div class="modal-body se-modal-body">
+                    <h3>Secure Care Self Storage 24/7 Remote Video Surveillance Services</h3>
+                    <p>Armor Monitoring’s customized video surveillance solutions operate in real-time to catch events as they occur. Our proactive solutions are typically 95% more cost-effective than traditional security guards.</p>
+                    <h4>Security Concerns</h4>
+                    <h5>BREAK-INS</h5>
+                    <p>Armor’s live monitoring provides a more effective solution than traditional surveillance. Trained operators detect live break-ins and property damage, activating speakers to deter crime.</p>
+                    <h5>LIABILITY</h5>
+                    <p>Self-storage facilities are vulnerable to liability from theft, injury, and damage. We mitigate these risks by enhancing security around office areas and access gates.</p>
+                    <h4>OUR PROACTIVE SOLUTION PROVIDES:</h4>
+                    <ul>
+                        <li>Liability Protection</li>
+                        <li>24/7 Monitoring</li>
+                        <li>Customized Reports and Analytics</li>
+                        <li>Operational Improvements</li>
+                        <li>Extensive Site Coverage</li>
+                        <li>Quicker Response Times</li>
+                        <li>Insurance Savings</li>
+                        <li>Total Service</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-cannabis" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content se-modal-content">
+                <div class="modal-header se-modal-header">
+                    <button type="button" class="se-close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title se-modal-title">Cannabis Security</h4>
+                </div>
+                <div class="modal-body se-modal-body">
+                    <h3>Weed Dispensary Security Solutions | Real-Time Surveillance</h3>
+                    <p>Armor Monitoring offers tailored video surveillance solutions that operate in real-time, capturing events as they occur. Our proactive approach delivers top-tier security while reducing liability.</p>
+                    <h4>Security Concerns</h4>
+                    <h5>THEFT & PROPERTY DAMAGE</h5>
+                    <p>The cannabis industry is largely cash-based and vulnerable to theft. Armor video monitoring ensures continuous oversight, mitigating financial and product loss.</p>
+                    <h5>REMOTE LOCATIONS</h5>
+                    <p>Many cannabis farms are in rural areas. Armor video monitoring allows remote operators to view multiple cameras simultaneously regardless of location.</p>
+                    <h4>OUR PROACTIVE SOLUTION PROVIDES:</h4>
+                    <ul>
+                        <li>Liability Protection</li>
+                        <li>24/7 Monitoring</li>
+                        <li>Customized Reports and Analytics</li>
+                        <li>Operational Improvements</li>
+                        <li>Extensive Site Coverage</li>
+                        <li>Quicker Response Times</li>
+                        <li>Insurance Savings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-mining" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content se-modal-content">
+                <div class="modal-header se-modal-header">
+                    <button type="button" class="se-close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title se-modal-title">Metals & Mining Security</h4>
+                </div>
+                <div class="modal-body se-modal-body">
+                    <h3>Live Video Monitoring For The Metal And Mining Industry</h3>
+                    <p>Armor Monitoring’s tailored video surveillance solutions capture events as they happen. Our proactive solutions offer the highest level of security while minimizing liability.</p>
+                    <h4>Security Concerns</h4>
+                    <h5>EMPLOYEE SAFETY</h5>
+                    <p>Employees face daily risks. Armor’s proactive monitoring helps identify potential hazards and inefficiencies, fostering a safer working environment.</p>
+                    <h5>TRESPASSING AND LIABILITY</h5>
+                    <p>Mining sites present hazards for unauthorized individuals. Our solution detects risky situations in real-time, helping protect against liability.</p>
+                    <h5>REMOTE LOCATIONS</h5>
+                    <p>Mining sites are often challenging to secure. Our solution empowers remote operators to monitor multiple cameras simultaneously.</p>
+                    <h4>OUR PROACTIVE SOLUTION PROVIDES:</h4>
+                    <ul>
+                        <li>Liability Protection</li>
+                        <li>24/7 Monitoring</li>
+                        <li>Customized Reports and Analytics</li>
+                        <li>Operational Improvements</li>
+                        <li>Extensive Site Coverage</li>
+                        <li>Quicker Response Times</li>
+                        <li>Insurance Savings</li>
+                        <li>Total Service</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- End Feature Section -->
     
     
     <hr>
@@ -696,11 +1272,10 @@
                                 </div>
                                 <div class="plan-list">
                                     <ul>
-                                        <li>Standard HD Monitoring</li>
-                                        <li>24/7 Digital Support</li>
-                                        <li>Cloud Storage (7 Days)</li>
-                                        <li>Instant Mobile Alerts</li>
-                                        <li>Total: $500 Billed Monthly</li>
+                                        <li>1-16 Cameras</li>
+                                        <li>24/7 Full Support</li>
+                                        <li>Professional Team</li>
+                                        <li>24/7 Live Monitoring</li>
                                     </ul>
                                 </div>
                                 <div class="plan-signup">
@@ -722,8 +1297,6 @@
                                 <div class="plan-list">
                                     <ul>
                                         <li>Everything in Basic</li>
-                                        <li>AI Human Detection</li>
-                                        <li>Cloud Storage (30 Days)</li>
                                         <li>Priority Support Line</li>
                                         <li>Total: $1,350 (Paid in Advance)</li>
                                     </ul>
@@ -1420,27 +1993,6 @@
             });
         });
         </script>
-        <!-- Service Modal -->
-        <script>
-            const serviceBtns = document.querySelectorAll('.service-btn');
-            const modalImg = document.getElementById('aboutModalImg');
-            const modalTitle = document.getElementById('aboutModalTitle');
-            const modalDesc = document.getElementById('aboutModalDesc');
-
-            serviceBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const title = btn.getAttribute('data-title');
-                    const desc = btn.getAttribute('data-desc');
-                    const img = btn.getAttribute('data-img');
-
-                    modalTitle.textContent = title;
-                    modalDesc.textContent = desc;
-                    modalImg.src = img;
-
-                    $('#aboutModal').modal('show'); // jQuery Bootstrap
-                });
-            });
-        </script>
        <!-- Price PLan Modal -->
                  <script>
                     document.addEventListener('DOMContentLoaded', () => {
@@ -1448,21 +2000,21 @@
                         const planFeatures = {
                             "Basic Secure": [
                                 "24/7 Active Monitoring", "HD Video Quality", "Instant Mobile Alerts",
-                                "7-Day Cloud History", "Two-Way Audio Talk", "Night Vision Capable",
+                                 "Two-Way Audio Talk", "Night Vision Capable",
                                 "Motion Triggered Recording", "No Long-term Contracts", 
                                 "Easy Wireless Setup", "99.9% Uptime Guarantee"
                             ],
                             "Advance Shield": [
-                                "24/7 Active Monitoring", "AI Human Detection", "Multiple Activity Zones",
-                                "30-Day Cloud History", "Rich Notifications (Snapshot)", 
+                                "24/7 Active Monitoring",  "Multiple Activity Zones",
+                                 "Rich Notifications (Snapshot)", 
                                 "Package Delivery Alerts", "Priority Support Line", 
                                 "Automated Siren Response", "Pet Immunity Filters", "Tamper Detection", 
                                 "HD Video Quality"
                             ],
                             "Elite Guardian": [
                                 "4K Ultra-HD Resolution", "Dedicated Account Manager", 
-                                "Quarterly On-site Audits", "Facial Recognition AI", 
-                                "Unlimited Cloud Storage", "24/7 Professional Guard Response", 
+                                "Quarterly On-site Audits", 
+                                 "24/7 Professional Guard Response", 
                                 "License Plate Recognition", "Integrated Smart Home Hub", 
                                 "Lifetime Hardware Warranty", "Priority Police Dispatch", 
                                 "VIP Support Line"
