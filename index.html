@@ -34,6 +34,9 @@
     <!-- Colors CSS -->
     <link rel="stylesheet" type="text/css" href="css/color/green.css">
     
+    <!-- Aos Integeration -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Colors CSS -->
     <link rel="stylesheet" type="text/css" href="css/color/green.css" title="green">
     <link rel="stylesheet" type="text/css" href="css/color/light-red.css" title="light-red">
@@ -56,7 +59,20 @@
 </head>
 
 <body class="index">
-    
+    <!-- Email Bubble -->
+    <a href="mailto:SurveilEyesSolutions@gmail.com" class="chat-bubble" style="bottom: 170px;" data-aos="fade-up" data-aos-duration="2000">
+        <i class="fa fa-envelope"></i>
+    </a>
+
+    <!-- WhatsApp Bubble -->
+    <a href="https://wa.me/12817367985" target="_blank" class="chat-bubble" style="bottom: 100px;" data-aos="fade-up" data-aos-duration="1500">
+        <i class="fa fa-whatsapp"></i>
+    </a>
+
+    <!-- Chat Toggle Bubble -->
+    <div class="chat-bubble" onclick="toggleChat()" style="bottom: 30px;" >
+        <i class="fa fa-comments"></i>
+    </div>
     
     <!-- Styleswitcher
 ================================================== -->
@@ -154,12 +170,13 @@
                     <div class="col-md-8 col-md-offset-2 text-center">
                         
                         <!-- Main Title -->
-                        <h1 class="hero-title animated3">
+                        <h1 class="hero-title animated3" id="typewriter-heading">
                             SURVEIL EYES
                         </h1>
                         
                         <!-- Subtitle -->
-                        <p class="hero-subtitle animated2">
+                         <p id="typewriteb"></p>
+                        <p class="hero-subtitle animated2" id="">
                             Your Security, Our Mission.<br>Always Watching, Always Secure.
                         </p>   
                         
@@ -180,28 +197,28 @@
             <div class="container-fluid" style="padding:0;">
                 <div class="row no-gutters">
                     
-                    <div class="col-xs-6 col-sm-3 stats-box">
+                    <div class="col-xs-6 col-sm-3 stats-box" data-aos="fade-right" data-aos-duration="1000">
                         <div class="stats-box-content">
                             <h3 class="count-up" data-target="365">0</h3>
                             <span>Days Active</span>
                         </div>
                     </div>
 
-                    <div class="col-xs-6 col-sm-3 stats-box">
+                    <div class="col-xs-6 col-sm-3 stats-box" data-aos="fade-right" data-aos-duration="2000">
                         <div class="stats-box-content">
                             <h3 class="count-up" data-target="24">0</h3>
                             <span>Monitoring (Hours)</span>
                         </div>
                     </div>
 
-                    <div class="col-xs-6 col-sm-3 stats-box">
+                    <div class="col-xs-6 col-sm-3 stats-box" data-aos="fade-right" data-aos-duration="2900">
                         <div class="stats-box-content">
                             <h3 class="count-up" data-target="100">0</h3>
                             <span>Secure (%)</span>
                         </div>
                     </div>
 
-                    <div class="col-xs-6 col-sm-3 stats-box">
+                    <div class="col-xs-6 col-sm-3 stats-box" data-aos="fade-right" data-aos-duration="3000">
                         <div class="stats-box-content">
                             <h3 class="count-up" data-target="0">0</h3>
                             <span>Incidents</span>
@@ -223,37 +240,37 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="feature">
-                            <i class="fa fa-eye"></i>
+                            <i class="fa fa-eye" data-aos="fade-up" data-aos-duration="500"></i>
                             <div class="feature-content">
-                                <h4>24/7 Monitoring</h4>
-                                <p>Our team watches your cameras around the clock, ensuring every alert is noticed immediately.</p>
+                                <h4 data-aos="fade-up" data-aos-duration="1000">24/7 Monitoring</h4>
+                                <p data-aos="fade-up" data-aos-duration="1500">Our team watches your cameras around the clock, ensuring every alert is noticed immediately.</p>
                             </div>
                         </div>
                     </div><!-- /.col-md-3 -->
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="feature">
-                            <i class="fa fa-exclamation-triangle"></i>
+                            <i class="fa fa-exclamation-triangle" data-aos="fade-up" data-aos-duration="700"></i>
                             <div class="feature-content">
-                                <h4>Threat Detection</h4>
-                                <p>Suspicious behavior like theft or misconduct is identified in real-time, enabling quick response.</p>
+                                <h4 data-aos="fade-up" data-aos-duration="1000">Threat Detection</h4>
+                                <p data-aos="fade-up" data-aos-duration="1500">Suspicious behavior like theft or misconduct is identified in real-time, enabling quick response.</p>
                             </div>
                         </div>
                     </div><!-- /.col-md-3 -->
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="feature">
-                            <i class="fa fa-bell"></i>
+                            <i class="fa fa-bell" data-aos="fade-up" data-aos-duration="900"></i>
                             <div class="feature-content">
-                                <h4>Instant Alerts</h4>
-                                <p>Owners or staff are notified instantly about incidents, preventing losses before they happen.</p>
+                                <h4 data-aos="fade-up" data-aos-duration="1000">Instant Alerts</h4>
+                                <p data-aos="fade-up" data-aos-duration="1500">Owners or staff are notified instantly about incidents, preventing losses before they happen.</p>
                             </div>
                         </div>
                     </div><!-- /.col-md-3 -->
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="feature">
-                            <i class="fa fa-cogs"></i>
+                            <i class="fa fa-cogs" data-aos="fade-up" data-aos-duration="1100"></i>
                             <div class="feature-content">
-                                <h4>Expert Installation</h4>
-                                <p>We ensure your cameras are set up correctly for maximum coverage and optimal security.</p>
+                                <h4 data-aos="fade-up" data-aos-duration="1000">Expert Installation</h4>
+                                <p data-aos="fade-up" data-aos-duration="1500">We ensure your cameras are set up correctly for maximum coverage and optimal security.</p>
                             </div>
                         </div>
                     </div>
@@ -271,14 +288,14 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <div class="section-title text-center">
-                            <h3>About Us</h3>
-                            <p>Professional Remote Surveillance</p>
+                            <h3 data-aos="fade-up" data-aos-duration="1000">About Us</h3>
+                            <p data-aos="fade-up" data-aos-duration="1500">Professional Remote Surveillance</p>
                         </div>
                 </div>
             </div>
             <div class="row">
                 
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-right" data-aos-duration="1000">
                     <div class="welcome-section text-center">
                         <img src="images/sur/pic1.jpeg" alt="..">
                         <h4>Who We Are</h4>
@@ -290,7 +307,7 @@
                     </div>
                 </div>
                 
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-right" data-aos-duration="1500">
                     <div class="welcome-section text-center">
                         <img src="images/sur/pic2.jpeg" class="img-responsive" alt="..">
                         <h4>Our Mission</h4>
@@ -302,7 +319,7 @@
                     </div>
                 </div>
                 
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-right" data-aos-duration="2000">
                     <div class="welcome-section text-center">
                         <img src="images/sur/pic4.jpeg" class="img-responsive" alt="..">
                         <h4>What We Do</h4>
@@ -358,8 +375,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="section-title text-center">
-                                <h3>Our Services</h3>
-                                <p>Find the best services to get secured <br><sub><b>Note: press icons to read breifly.</b></sub></p>
+                                <h3 data-aos="fade-up" data-aos-duration="1000">Our Services</h3>
+                                <p data-aos="fade-up" data-aos-duration="1500">Find the best services to get secured <br><sub><b>Note: press icons to read breifly.</b></sub></p>
                             </div>
                         </div>
                     </div>
@@ -367,7 +384,7 @@
                     <div class="row">
                         <!-- Holistic Coverage -->
                         <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="feature-2">
+                            <div class="feature-2" data-aos="fade-right" data-aos-duration="1000">
                                 <div class="media service-btn" 
                                     data-img="images/sur/Holistic.png"
                                     data-title="Holistic Coverage"
@@ -386,7 +403,7 @@
 
                         <!-- Actionable Reporting -->
                         <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="feature-2">
+                            <div class="feature-2" data-aos="fade-right" data-aos-duration="1500">
                                 <div class="media service-btn" 
                                     data-img="images/sur/Actionable.png"
                                     data-title="Actionable Reporting"
@@ -405,7 +422,7 @@
 
                         <!-- AI Human Detection -->
                         <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="feature-2">
+                            <div class="feature-2" data-aos="fade-right" data-aos-duration="2000">
                                 <div class="media service-btn" 
                                     data-title="AI Human Detection"
                                     data-desc="Our advanced AI technology intelligently identifies human presence, distinguishing it from animals, vehicles, or environmental motion. By minimizing false alarms and focusing only on relevant threats, this system enhances real-time monitoring, improves response accuracy, and ensures your security personnel concentrate on genuine security events."
@@ -424,7 +441,7 @@
 
                         <!-- Cloud Storage -->
                         <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="feature-2">
+                            <div class="feature-2" data-aos="fade-right" data-aos-duration="2000">
                                 <div class="media service-btn" 
                                     data-title="Cloud Storage"
                                     data-desc="All surveillance footage is safely stored in a secure cloud environment, accessible anytime from anywhere. With flexible retention options ranging from short-term storage to extended archives, your data remains protected and retrievable whenever needed. Cloud storage ensures continuity, disaster recovery, and peace of mind that your important recordings are never lost."
@@ -443,7 +460,7 @@
 
                         <!-- Regular Maintenance -->
                         <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="feature-2">
+                            <div class="feature-2" data-aos="fade-right" data-aos-duration="2900">
                                 <div class="media service-btn" 
                                     data-title="Regular Maintenance"
                                     data-desc="Our proactive maintenance services ensure that every component of your security system is in optimal condition. Routine inspections, preventive servicing, and timely updates minimize downtime, extend the lifespan of equipment, and maintain the reliability of your monitoring infrastructure. With regular maintenance, your system continues to operate flawlessly and efficiently."
@@ -462,7 +479,7 @@
 
                         <!-- Trusted Integrity -->
                         <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="feature-2">
+                            <div class="feature-2" data-aos="fade-right" data-aos-duration="3000">
                                 <div class="media service-btn" 
                                     data-title="Trusted Integrity"
                                     data-desc="Our certified and professional team operates with the highest ethical and security standards. Every piece of data is handled responsibly, monitoring is conducted transparently, and client privacy is always respected. Trusted integrity ensures that your security solutions are not only effective but also reliable, accountable, and professionally managed."
@@ -668,7 +685,7 @@
             <div class="row">
                         <!-- //style="display: flex; justify-content: space-evenly;align-items: center;" -->
                 <div class="pricing" >
-                        <div class="col-md-12">
+                        <div class="col-md-12" data-aos="fade-in" data-aos-duration="1000">
                             <div class="pricing-table">
                                 <div class="plan-name">
                                     <h3>Basic Secure</h3>
@@ -692,8 +709,8 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="col-md-12">
+
+                        <div class="col-md-12" data-aos="fade-in" data-aos-duration="1000">
                             <div class="pricing-table">
                                 <div class="plan-name">
                                     <h3>Advance Shield</h3>
@@ -717,8 +734,8 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="col-md-12">
+
+                        <div class="col-md-12" data-aos="fade-in" data-aos-duration="1000">
                             <div class="pricing-table">
                                 <div class="plan-name">
                                     <h3>Elite Guardian</h3>
@@ -854,8 +871,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title text-center">
-                        <h3>Get In Touch</h3>
-                        <p class="white-text">We are Located in Houston, Texas</p>
+                        <h3 data-aos="fade-up" data-aos-duration="500">Get In Touch</h3>
+                        <p class="white-text" data-aos="fade-up" data-aos-duration="700">We are Located in Houston, Texas</p>
                     </div>
                 </div>
             </div>
@@ -864,27 +881,27 @@
                     <form name="sentMessage" id="contactForm" novalidate>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group">
+                                <div class="form-group" data-aos="fade-up" data-aos-duration="900">
                                     <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
                                     <p class="help-block text-danger"></p>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" data-aos="fade-up" data-aos-duration="1100">
                                     <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
                                     <p class="help-block text-danger"></p>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" data-aos="fade-up" data-aos-duration="1300">
                                     <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group">
+                                <div class="form-group" data-aos="fade-up" data-aos-duration="1500">
                                     <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
-                            <div class="col-lg-12 text-center">
+                            <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-duration="1700">
                                 <div id="success"></div>
                                 <button type="submit" class="btn btn-primary">Send Message</button>
                             </div>
@@ -894,24 +911,24 @@
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="footer-contact-info">
-                        <h4>Contact info</h4>
+                    <div class="footer-contact-info" data-aos="fade-up" data-aos-duration="900">
+                        <h4 data-aos="fade-up" data-aos-duration="1000">Contact info</h4>
                         <ul>
-                            <li><strong>E-mail :</strong> SurveilEyesSolutions@gmail.com</li>
-                            <li><strong>Phone :</strong> +1 281-736-7985</li>
-                            <li><strong>Mobile :</strong> +1 281-736-7985</li>
-                            <li><strong>Web :</strong> SurveilEyesSolutions.com</li>
+                            <li data-aos="fade-up" data-aos-duration="1100"><strong>E-mail :</strong> SurveilEyesSolutions@gmail.com</li>
+                            <li data-aos="fade-up" data-aos-duration="1200"><strong>Phone :</strong> +1 281-736-7985</li>
+                            <li data-aos="fade-up" data-aos-duration="1300"><strong>Mobile :</strong> +1 281-736-7985</li>
+                            <li data-aos="fade-up" data-aos-duration="1400"><strong>Web :</strong> SurveilEyesSolutions.com</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-4 col-md-offset-4">
-                    <div class="footer-contact-info">
-                        <h4>Working Hours</h4>
+                    <div class="footer-contact-info" data-aos="fade-up" data-aos-duration="1100">
+                        <h4 data-aos="fade-up" data-aos-duration="1000">Working Hours</h4>
                         <ul>
-                            <li><strong>Mon-Wed :</strong> 9 am to 5 pm</li>
-                            <li><strong>Thurs-Fri :</strong> 12 pm to 10 pm</li>
-                            <li><strong>Sat :</strong> 9 am to 3 pm</li>
-                            <li><strong>Sunday :</strong> Closed</li>
+                            <li data-aos="fade-up" data-aos-duration="1100"><strong>Mon-Wed :</strong> 9 am to 5 pm</li>
+                            <li data-aos="fade-up" data-aos-duration="1200"><strong>Thurs-Fri :</strong> 12 pm to 10 pm</li>
+                            <li data-aos="fade-up" data-aos-duration="1300"><strong>Sat :</strong> 9 am to 3 pm</li>
+                            <li data-aos="fade-up" data-aos-duration="1400"><strong>Sunday :</strong> Closed</li>
                         </ul>
                     </div>
                 </div>
@@ -956,21 +973,6 @@
         </footer>
     </section>
 
-    <!-- Chat Bubbles & Window -->
-    <!-- Email Bubble -->
-    <a href="mailto:SurveilEyesSolutions@gmail.com" class="chat-bubble" style="bottom: 170px;">
-        <i class="fa fa-envelope"></i>
-    </a>
-
-    <!-- WhatsApp Bubble -->
-    <a href="https://wa.me/12817367985" target="_blank" class="chat-bubble" style="bottom: 100px;">
-        <i class="fa fa-whatsapp"></i>
-    </a>
-
-    <!-- Chat Toggle Bubble -->
-    <div class="chat-bubble" onclick="toggleChat()" style="bottom: 30px;">
-        <i class="fa fa-comments"></i>
-    </div>
 
     <!-- Chat Window -->
     <div class="chat-window" id="chatWindow">
@@ -986,7 +988,7 @@
             <button onclick="sendMessage()">Send</button>
         </div>
     </div>
-
+    <!-- Preloader -->
         <div id="preloader">
             <div class="camera">
                 <div class="outer-ring"></div>
@@ -1024,6 +1026,13 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/script.js"></script>
+
+     <!-- Aos Script Integeration -->
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script>
+        AOS.init();
+     </script>
+
 
     <!-- Chatbot Logic -->
     <script>
@@ -1298,7 +1307,7 @@
 
             // --- 2. TYPEWRITER ANIMATION ---
             const headingElement = document.getElementById('typewriter-heading');
-            const subElement = document.getElementById('typewriter-sub');
+            const subElement = document.getElementById('typewriteb');
 
             const phrases = [
                 {

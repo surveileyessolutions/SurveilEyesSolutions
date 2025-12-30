@@ -277,7 +277,7 @@ $('#team a').click(function (e) {
     /*	preloader
     /*---------------------------------------------------*/
 
-    const text = "SurveilEyesSolutions | HawkEye";
+    const text = "SurveilEyesSolutions | Hawkeye";
 const el = document.getElementById("loading-text");
 const preloader = document.getElementById("preloader");
 
@@ -286,7 +286,7 @@ let index = 0;
 function typeText() {
     if (index < text.length) {
         el.textContent += text[index++];
-        setTimeout(typeText, 120); // typing speed
+        setTimeout(typeText, 150); // typing speed
     } else {
         // TEXT COMPLETED → REMOVE PRELOADER
         setTimeout(() => {
@@ -294,8 +294,8 @@ function typeText() {
 
             setTimeout(() => {
                 preloader.remove();
-            }, 600); // fade-out duration
-        }, 300); // tiny pause after completion (optional)
+            }, 1); // fade-out duration
+        }, 0); // tiny pause after completion (optional)
     }
 }
 
