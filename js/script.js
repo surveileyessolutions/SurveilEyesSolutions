@@ -313,8 +313,8 @@ function typeText() {
 
             setTimeout(() => {
                 preloader.remove();
-            }, 1); // fade-out duration
-        }, 0); // tiny pause after completion (optional)
+            }, 10); // fade-out duration
+        }, 2); // tiny pause after completion (optional)
     }
 }
 
